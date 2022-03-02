@@ -1,0 +1,1 @@
+export  {fetchReducer, fetchState} from './getProducts.slice';

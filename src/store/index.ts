@@ -1,7 +1,7 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import rootReducer from './rootReducer';
-import GetProducts from "middelwares/getProducts.middelware";
-import { fetchParams } from '../models/enums/fetchParams.enums';
+import {GetProducts} from "middelwares";
+import { fetchParams } from 'models';
 import { RootState } from './rootReducer';
 
 

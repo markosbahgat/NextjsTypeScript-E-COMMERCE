@@ -5,7 +5,7 @@ import {axios} from 'utils';
 interface FetchError {
     errorMessage: string | null
 }
-const GetProducts = createAsyncThunk<
+export const GetProducts = createAsyncThunk<
     IProduct[],
     IParams,
     {rejectValue: FetchError}
@@ -18,5 +18,3 @@ const GetProducts = createAsyncThunk<
         return rejectWithValue(error as FetchError);
     }
 })
-
-export default GetProducts;
