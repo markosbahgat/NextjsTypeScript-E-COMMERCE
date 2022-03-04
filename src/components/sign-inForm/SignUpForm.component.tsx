@@ -32,7 +32,7 @@ const SignUpForm:React.FC <Props> = ({onSubmit}) => {
                     {  required: true })}
                     />
                     <i className="fas fa-envelope fa-lg"></i>
-                {errors.name?.firstname?.type === 'required' && <span color="red" >This field is required</span>}
+                {errors.name?.type === 'required' && <span color="red" >This field is required</span>}
                 </div>
                 <div className={styles.input_container}>
                     <label className={styles.input_label}>Email Address</label>
