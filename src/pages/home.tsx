@@ -1,7 +1,8 @@
 import React from 'react'
 import { NextPage } from 'next';
-import { HomeHOC } from 'HOC/home.hoc';
+
 import styles from 'styles/home.module.scss';
+import { HomeHOC } from 'HOC';
 
 const Home:NextPage = () => {
     

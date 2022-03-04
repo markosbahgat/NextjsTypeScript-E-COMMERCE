@@ -1,23 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
-}
-body{
-  min-height: 100vh;
-  width: 100%;
-  background: #EEECEB;
-}
-footer{
-  position: fixed;
+
+
+.footer{
+  position: relative;
   background: gray;
   width: 100%;
   bottom: 0;
   left: 0;
 }
-footer::before{
+.footer::before{
   content: '';
   position: absolute;
   left: 0;
@@ -26,25 +17,25 @@ footer::before{
   width: 100%;
   background: #AFAFB6;
 }
-footer .content{
+.footer .content{
   max-width: 1250px;
   margin: auto;
   padding: 30px 40px 40px 40px;
 }
-footer .content .top{
+.footer .content .top{
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 50px;
 }
-.content .top .logo-details{
+.content .top .logo_details{
   color: #fff;
   font-size: 30px;
 }
-.content .top .media-icons{
+.content .top .media_icons{
   display: flex;
 }
-.content .top .media-icons a{
+.content .top .media_icons a{
   height: 40px;
   width: 40px;
   margin: 0 8px;
@@ -56,57 +47,57 @@ footer .content .top{
   text-decoration: none;
   transition: all 0.4s ease;
 }
-.top .media-icons a:nth-child(1){
+.top .media_icons a:nth-child(1){
   background: #4267B2;
 }
-.top .media-icons a:nth-child(1):hover{
+.top .media_icons a:nth-child(1):hover{
   color: #4267B2;
   background: #fff;
 }
-.top .media-icons a:nth-child(2){
+.top .media_icons a:nth-child(2){
   background: #1DA1F2;
 }
-.top .media-icons a:nth-child(2):hover{
+.top .media_icons a:nth-child(2):hover{
   color: #1DA1F2;
   background: #fff;
 }
-.top .media-icons a:nth-child(3){
+.top .media_icons a:nth-child(3){
   background: #E1306C;
 }
-.top .media-icons a:nth-child(3):hover{
+.top .media_icons a:nth-child(3):hover{
   color: #E1306C;
   background: #fff;
 }
-.top .media-icons a:nth-child(4){
+.top .media_icons a:nth-child(4){
   background: #0077B5;
 }
-.top .media-icons a:nth-child(4):hover{
+.top .media_icons a:nth-child(4):hover{
   color: #0077B5;
   background: #fff;
 }
-.top .media-icons a:nth-child(5){
+.top .media_icons a:nth-child(5){
   background: #FF0000;
 }
-.top .media-icons a:nth-child(5):hover{
+.top .media_icons a:nth-child(5):hover{
   color: #FF0000;
   background: #fff;
 }
-footer .content .link-boxes{
+.footer .content .link_boxes{
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-footer .content .link-boxes .box{
+.footer .content .link_boxes .box{
   width: calc(100% / 5 - 10px);
 }
-.content .link-boxes .box .link_name{
+.content .link_boxes .box .link_name{
   color: #fff;
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 10px;
   position: relative;
 }
-.link-boxes .box .link_name::before{
+.link_boxes .box .link_name::before{
   content: '';
   position: absolute;
   left: 0;
@@ -115,26 +106,30 @@ footer .content .link-boxes .box{
   width: 35px;
   background: #fff;
 }
-.content .link-boxes .box li{
+.content .link_boxes .box li{
   margin: 6px 0;
   list-style: none;
 }
-.content .link-boxes .box li a{
+.content .link_boxes .box li a{
   color: #fff;
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
   opacity: 0.8;
-  transition: all 0.4s ease
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
 }
-.content .link-boxes .box li a:hover{
+.content .link_boxes .box li a:hover{
   opacity: 1;
   text-decoration: underline;
 }
-.content .link-boxes .input-box{
+.content .link_boxes .input_box{
   margin-right: 55px;
 }
-.link-boxes .input-box input{
+.link_boxes .input_box input{
   height: 40px;
   width: calc(100% + 55px);
   outline: none;
@@ -146,11 +141,11 @@ footer .content .link-boxes .box{
   color: #fff;
   margin-top: 5px;
 }
-.link-boxes .input-box input::placeholder{
+.link_boxes .input_box input::placeholder{
   color: #AFAFB6;
   font-size: 16px;
 }
-.link-boxes .input-box input[type="button"]{
+.link_boxes .input_box input[type="button"]{
   background: #fff;
   color: gray;
   border: none;
@@ -161,61 +156,61 @@ footer .content .link-boxes .box{
   cursor: pointer;
   transition: all 0.4s ease;
 }
-.input-box input[type="button"]:hover{
+.input_box input[type="button"]:hover{
   opacity: 1;
 }
-footer .bottom-details{
+.footer .bottom_details{
   width: 100%;
   background: rgb(53, 53, 53);
 }
-footer .bottom-details .bottom_text{
+.footer .bottom_details .bottom_text{
   max-width: 1250px;
   margin: auto;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
 }
-.bottom-details .bottom_text span,
-.bottom-details .bottom_text a{
+.bottom_details .bottom_text span,
+.bottom_details .bottom_text a{
   font-size: 14px;
   font-weight: 300;
   color: #fff;
   opacity: 0.8;
   text-decoration: none;
 }
-.bottom-details .bottom_text a:hover{
+.bottom_details .bottom_text a:hover{
   opacity: 1;
   text-decoration: underline;
 }
-.bottom-details .bottom_text a{
+.bottom_details .bottom_text a{
   margin-right: 10px;
 }
 @media (max-width: 900px) {
-  footer .content .link-boxes{
+  .footer .content .link_boxes{
     flex-wrap: wrap;
   }
-  footer .content .link-boxes .input-box{
+  .footer .content .link_boxes .input_box{
     width: 40%;
     margin-top: 10px;
   }
 }
 @media (max-width: 700px){
-  footer{
+  .footer{
     position: relative;
   }
-  .content .top .logo-details{
+  .content .top .logo_details{
     font-size: 26px;
   }
-  .content .top .media-icons a{
+  .content .top .media_icons a{
     height: 35px;
     width: 35px;
     font-size: 14px;
     line-height: 35px;
   }
-  footer .content .link-boxes .box{
+  .footer .content .link_boxes .box{
     width: calc(100% / 3 - 10px);
   }
-  footer .content .link-boxes .input-box{
+  .footer .content .link_boxes .input_box{
     width: 60%;
   }
   .bottom-details .bottom_text span,
@@ -224,19 +219,19 @@ footer .bottom-details .bottom_text{
   }
 }
 @media (max-width: 520px){
-  footer::before{
+  .footer::before{
     top: 145px;
   }
-  footer .content .top{
+  .footer .content .top{
     flex-direction: column;
   }
-  .content .top .media-icons{
+  .content .top .media_icons{
     margin-top: 16px;
   }
-  footer .content .link-boxes .box{
+  .footer .content .link_boxes .box{
     width: calc(100% / 2 - 10px);
   }
-  footer .content .link-boxes .input-box{
+  .footer .content .link_boxes .input_box{
     width: 100%;
   }
 }

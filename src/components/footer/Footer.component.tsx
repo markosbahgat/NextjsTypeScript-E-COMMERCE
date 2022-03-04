@@ -4,7 +4,7 @@ import styles from './Style.module.scss';
 interface Props {}
 const FixedBottomFooter: React.FC<Props> = () => {
     return ( 
-  <footer>
+  <footer className={styles.footer}>
     <div className={styles.content}>
       <div className={styles.top}>
         <div className={styles.logo_details}>

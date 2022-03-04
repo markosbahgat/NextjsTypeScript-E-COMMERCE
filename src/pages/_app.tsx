@@ -4,11 +4,14 @@ import App from 'next/app';
 import {Provider} from 'react-redux';
 import store from 'store';
 import '@fortawesome/fontawesome-free/css/all.css';
+import Layout from '../components/layout/layout.component';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   )
 }

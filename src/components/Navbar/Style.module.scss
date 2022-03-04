@@ -1,14 +1,12 @@
-*{
-    box-sizing: border-box;
-    font-family: sans-serif;
-    padding: 0;
-    margin: 0;
-}
 
 .navbar{
+    position: fixed;
     width: 100%;
     padding: 25px 0;
     background-color: #1b1b1b;
+    z-index: 10000;
+    
+
 }
 .navbar .logo a{
     color: white;
@@ -29,6 +27,17 @@
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
+    text-transform: capitalize;
+}
+.menu_list li:last-child a{
+    display: inline-block;
+    padding: 0.5em 0.7em;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 2px solid white;
 }
 .content{
     margin: auto;
@@ -52,6 +61,7 @@
 
 .menu_list li a:hover{
     color: cyan;
+    
 }
 
 .icon {
@@ -61,20 +71,20 @@
     display: none;
 }
 
-.icon.cancel_btn{
+.icon#cancel_btn{
     position: absolute;
     right: 50px;
     top: 30px;
 }
 
 @media screen and (max-width: 1000px) {
-    .navbar .menu_list.active{
+    .navbar .menu_list#active{
         left: 0;
     }
     .icon{
         display: block;
     }
-    .icon.hide{
+    .icon#hide{
         display: none;
     }
     .navbar .menu_list{

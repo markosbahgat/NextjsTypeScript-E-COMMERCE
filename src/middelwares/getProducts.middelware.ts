@@ -10,8 +10,10 @@ export const GetProducts = createAsyncThunk<
     IParams,
     {rejectValue: FetchError}
 >('fetch/allProducts', async (params:IParams, {rejectWithValue}) => {
+    const {limit, id, sort} = params;
+    console.log(limit, id, sort)
     try{
-        const response = await axios.get<IProduct[]>('/products');
+        const response = await axios.get<IProduct[]>('/products', {params:{limit:limit, id:id, sort:sort}});
         return response.data
     }
     catch (error:any) {

@@ -1,11 +1,9 @@
 import React, { HTMLProps } from 'react';
 import Image from 'next/image';
 import styles from './style.module.scss';
-import logo from './assets/logo.jpg'
-import product1 from './assets/blue.png'
-import product2 from './assets/yellow.png'
-import product3 from './assets/pink.png'
+import logo from 'assets/logo.jpg';
 import { IProduct } from '../../models/interfaces/product.model';
+import Link from 'next/link';
 
 
 interface Props extends HTMLProps<HTMLAllCollection>{
@@ -34,9 +32,13 @@ const ProductCard: React.FC<Props> = ({product}) => {
                 <i className="fas fa-shopping-bag"></i>
             </div>
             <div className={styles.main_images}>
-                <div className={styles.product_img} id={styles.active}>
-                    <Image src={product.image} alt="blue" id={styles.img} layout="fill" priority />
-                </div>
+                <Link href={'/product/' + product.id}>
+                    <a>
+                        <div className={styles.product_img} id={styles.active}>
+                            <Image src={product.image} alt="blue" id={styles.img} layout="fill" priority />
+                        </div>
+                    </a>
+                </Link>
             </div>
         <div className={styles.shoe_details}>
                 <span className={styles.shoe_name}>{product.title.slice(0, 20)}....</span>

@@ -3,9 +3,7 @@
 
 
 .product_card {
-  position: relative;
-  max-width: 18vw;
-  width: 100%;
+  width: 330px;
   border-radius: 25px;
   padding: 20px 30px 30px 30px;
   background: #fff;
@@ -14,7 +12,6 @@
   overflow: hidden;
   margin: 3em auto;
   .shoe_details{
-    position: relative;
     background-color: white;
   }
 }
@@ -62,6 +59,7 @@
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
   cursor: pointer;
+  margin: auto;
   #img{
       object-fit: contain;
       transition: all 0.3s ease;
@@ -80,6 +78,10 @@
   font-size: 20px;
   font-weight: 500;
   color: #161616;
+  white-space: nowrap;
+  display: inline-block;
+
+  
 }
 .product_card .shoe_details p{
   font-size: 12px;
