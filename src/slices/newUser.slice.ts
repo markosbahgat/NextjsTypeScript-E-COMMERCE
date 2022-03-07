@@ -4,18 +4,24 @@ import { RootState } from '../store/rootReducer';
 
 interface AuthState {
     loading:boolean,
-    errorMessage:string | null | undefined
+    errorMessage:string | null | undefined,
+    AUTHUSER:boolean
 }
 
 const initialState:AuthState = {
     loading:false,
-    errorMessage:null
+    errorMessage:null,
+    AUTHUSER:false
 };
 
 const authUserSlice = createSlice({
     name:'auth',
     initialState,
-    reducers:{},
+    reducers:{
+        checkUser: (state, action) => {
+            state.AUTHUSER = action.payload;
+        }
+    },
     extraReducers:(builder) => {
         builder.addCase(PostNewUser.pending, (state) => {
             state.loading = true;
@@ -31,4 +37,5 @@ const authUserSlice = createSlice({
 })
 
 export const authReducer = authUserSlice.reducer;
+export const {checkUser} = authUserSlice.actions;
 export const authState = (state:RootState) => state.auth;

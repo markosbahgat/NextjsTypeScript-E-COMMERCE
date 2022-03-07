@@ -4,6 +4,8 @@ import styles from './style.module.scss';
 import logo from 'assets/logo.jpg';
 import { IProduct } from '../../models/interfaces/product.model';
 import Link from 'next/link';
+import { useAppDispatch } from '../../store/hooks';
+import {appendCart} from 'slices/cart.slice';
 
 
 interface Props extends HTMLProps<HTMLAllCollection>{
@@ -23,6 +25,11 @@ const handleSlidePage = (e:any) => {
     
 }
 const ProductCard: React.FC<Props> = ({product}) => {
+    const dispatch =  useAppDispatch();
+    const handleAppendCart = () => {
+        dispatch(appendCart({...product, amount: 1}))
+    
+    }
     return ( 
         <div className={styles.product_card}>
             <div className={styles.logo_cart}>
@@ -66,12 +73,12 @@ const ProductCard: React.FC<Props> = ({product}) => {
                     <span className={styles.price_letter}>fees: Nine dollar only</span>
                 </div>
                 </div>
-                <div className={styles.button}>
-                <div className={styles.button_layer}></div>
-                <button>Add To Cart</button>
+                <div className={styles.button} onClick={handleAppendCart}>
+                    <div className={styles.button_layer}></div>
+                    <button>Add To Cart</button>
                 </div>
-</div>
-     );
+        </div>
+    );
 }
  
 export default ProductCard;

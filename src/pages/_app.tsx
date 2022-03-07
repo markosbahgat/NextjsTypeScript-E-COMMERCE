@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import store from 'store';
 import '@fortawesome/fontawesome-free/css/all.css';
 import Layout from '../components/layout/layout.component';
+import nookies from 'nookies';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,8 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     </Provider>
   )
 }
-MyApp.getInitialProps =async (context:AppContext) => {
+MyApp.getInitialProps = async (context:AppContext) => {
   const {ctx} = context;
+  const cookies = nookies.get(ctx);
   if(ctx.pathname === '/'){
     ctx.res?.writeHead(302, {
       Location: '/home',

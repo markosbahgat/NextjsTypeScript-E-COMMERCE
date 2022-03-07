@@ -18,7 +18,8 @@ const initialState:FetchState = {
 const fetchProductSlice = createSlice({
     name:'fetch',
     initialState,
-    reducers:{},
+    reducers:{
+    },
     extraReducers:(builder) => {
         builder.addCase(GetProducts.pending, (state) => {
             state.loading = true;
@@ -33,6 +34,5 @@ const fetchProductSlice = createSlice({
         })
     },
 })
-
 export const fetchReducer = fetchProductSlice.reducer;
 export const fetchState = (state:RootState) => state.fetch;

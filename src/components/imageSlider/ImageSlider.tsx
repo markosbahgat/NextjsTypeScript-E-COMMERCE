@@ -7,7 +7,9 @@ import img3 from 'assets/img3.jpg';
 import img4 from 'assets/img4.jpg';
 import Image from 'next/image';
 
-interface Props {}
+interface Props {
+    
+}
 
 const ImageSlider: React.FC<Props> = () => {
     let counter = 0;

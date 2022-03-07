@@ -75,6 +75,28 @@
     margin: auto;
     margin-bottom: 20px;
 }
+#open{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4070f4;
+    margin-top: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    i{
+        text-align: center;
+        margin: auto;
+        font-size: 30px;
+        color: white;
+    }
+}
  @keyframes zoom{
     0%{
         transform: scale(1.3);
