@@ -24,20 +24,31 @@ const cartSlice = createSlice({
             state.overAllPrice += action.payload.amount * action.payload.price;
         },
         increament: (state, action) => {
-            console.log(action.payload)
-            state.overAllPrice += action.payload;
+            const product = state.cartProducts.find(item => item.id === action.payload.product.id)
+            if(product){
+                state.overAllPrice += action.payload.product.price;
+                product.amount = action.payload.amount;
+            }
         },
         decreament: (state, action) => {
-            console.log(action.payload)
-            state.overAllPrice -= action.payload;
+            //console.log(current(state))
+            const product = state.cartProducts.find(item => item.id === action.payload.product.id)
+            if(product){
+                state.overAllPrice -= action.payload.product.price;
+                product.amount = action.payload.amount;
+            }
         },
         removeCart:(state, action) => {
             state.cartProducts = state.cartProducts.filter(item => item.id !== action.payload.product.id);
             state.overAllPrice -= action.payload.product.price * action.payload.amount;
+        },
+        clearCart: (state) => {
+            state.cartProducts.length = 0;
+            state.overAllPrice = 0;
         }
     },
     
 })
-export const {appendCart, increament, decreament, removeCart} = cartSlice.actions;
+export const {appendCart, increament, decreament, removeCart, clearCart} = cartSlice.actions;
 export const cartReducer = cartSlice.reducer;
 export const cartState = (state:RootState) => state.cart;

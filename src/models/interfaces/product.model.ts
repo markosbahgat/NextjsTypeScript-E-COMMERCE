@@ -8,5 +8,9 @@ export interface IProduct {
     rating: {
         count:number,
         rate: number
-    }
+    },
+}
+
+export interface IProWithAmount extends IProduct{
+    amount: number
 }

@@ -2,16 +2,16 @@ import React, { HTMLProps } from 'react';
 import Image from 'next/image';
 import styles from './style.module.scss';
 import logo from 'assets/logo.jpg';
-import { IProWithAmount } from 'models/interfaces/product.model';
+import { IProduct } from 'models/interfaces/product.model';
 import Link from 'next/link';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { appendCart, increament } from 'slices/cart.slice';
-import { cartState } from '../../slices/cart.slice';
+import { cartState } from 'slices/cart.slice';
 import { showModel } from 'slices/essential.slice';
 
 
 interface Props extends HTMLProps<HTMLAllCollection>{
-    product:IProWithAmount
+    product:IProduct
 }
 
 const handleSlidePage = (e:any) => {
@@ -51,8 +51,8 @@ const ProductCard: React.FC<Props> = ({product}) => {
             <div className={styles.main_images}>
                 <Link href={'/product/' + product.id}>
                     <a>
-                        <div className={styles.product_img} id={styles.active}>
-                            <Image src={product.image} alt="blue" id={styles.img} layout="fill" priority />
+                        <div className={styles.product_img}>
+                            <Image src={product.image} alt="blue" id={styles.img} layout="fill" priority/>
                         </div>
                     </a>
                 </Link>
@@ -60,33 +60,20 @@ const ProductCard: React.FC<Props> = ({product}) => {
         <div className={styles.shoe_details}>
                 <span className={styles.shoe_name}>{product.title.slice(0, 20)}....</span>
                 <p>{product.description.slice(0, 50)}.....</p>
-                <div className={styles.stars}>
-                    <span>{product.rating.rate}</span>
-                    <i className='fas fa-star'></i>
-                    <i className='fas fa-star'></i>
-                    <i className='fas fa-star'></i>
-                    <i className='fas fa-star'></i>
-                    <i className='fas fa-star-half'></i>
-                </div>
-                </div>
-                <div className={styles.color_price}>
-                <div className={styles.color_option} onClick={(e) => handleSlidePage(e)}>
-                    <span className={styles.color}>Colour:</span>
-                    <div className={styles.circles}>
-                    <span className={styles.circle}  id={styles.blue}></span>
-                    <span className={styles.circle} id={styles.pink}></span>
-                    <span className={styles.circle} id={styles.yellow}></span>
-                    </div>
                 </div>
                 <div className={styles.price}>
-                    <span className={styles.price_num}>${product.price}</span>
-                    <span className={styles.price_letter}>fees: Nine dollar only</span>
+                    <span className={styles.price_num}>PRICE: ${product.price}</span>
                 </div>
+            <div className={styles.buttons_container}>
+                <div className={styles.button} onClick={() => dispatch(showModel(true))}>
+                    <div className={styles.button_layer}></div>
+                    <button><i className="fa-solid fa-cart-shopping"></i> Cart</button>
                 </div>
                 <div className={styles.button} onClick={() => handleAppendCart()}>
                     <div className={styles.button_layer}></div>
                     <button>Add To Cart</button>
                 </div>
+            </div>
         </div>
     );
 }

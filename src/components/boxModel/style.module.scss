@@ -159,6 +159,8 @@
 .button button.cancel{
     background: #d8266a;
     margin-right: 5%;
+    width: fit-content;
+    white-space: nowrap;
 }
 .button button.cancel:hover{
     background: #910138;
@@ -167,5 +169,11 @@
     background: #275df1;
 }
 
-
-
+.button button.clear{
+    width: fit-content;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 2px solid #275df1;
+    color: #275df1;
+    margin-right: 5%;
+}

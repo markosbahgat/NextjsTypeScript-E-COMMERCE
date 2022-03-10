@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styles from './style.module.scss';
-import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import img1 from 'assets/img1.jpg';
 import img2 from 'assets/img2.jpg';
 import img3 from 'assets/img3.jpg';
