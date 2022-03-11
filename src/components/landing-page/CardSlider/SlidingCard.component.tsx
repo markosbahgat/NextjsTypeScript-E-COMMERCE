@@ -21,8 +21,6 @@ const SlidingCard: React.FC<Props> = ({products}) => {
         slidesPerView={3}
         navigation
         loop
-        onSwiper={(swiper: any) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
         className={styles.main_container}
         >
         {products.map(item => (

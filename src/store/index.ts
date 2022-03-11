@@ -1,17 +1,24 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
-import rootReducer from './rootReducer';
+import { persistStore, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 import {GetProducts} from "middelwares";
 import { fetchParams } from 'models';
-import { RootState } from './rootReducer';
+import { RootState, persistedReducer } from './rootReducer';
 
 
 
 
 const store = configureStore({
-    reducer: rootReducer
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: {
+            ignoredActions: [FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE]
+        }
+    })
 })
 store.dispatch(GetProducts(fetchParams))
 
+
+export const persistor = persistStore(store);
 export type AppDispatch = typeof store.dispatch;
 export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
 export default store;

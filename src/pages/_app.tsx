@@ -2,17 +2,20 @@ import '../styles/globals.scss'
 import type { AppContext, AppProps } from 'next/app'
 import App from 'next/app';
 import {Provider} from 'react-redux';
-import store from 'store';
+import store, {persistor} from 'store';
 import '@fortawesome/fontawesome-free/css/all.css';
 import Layout from '../components/layout/layout.component';
 import nookies from 'nookies';
+import { PersistGate } from 'redux-persist/integration/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <PersistGate loading={null} persistor={persistor}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+      </PersistGate>
     </Provider>
   )
 }

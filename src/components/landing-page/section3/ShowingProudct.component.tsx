@@ -6,6 +6,7 @@ import styles from './style.module.scss';
 interface Props {}
 
 const ShowingProduct:React.FC<Props> = () => {
+    
     return (
         <div className={styles.main_container}>
             <div className={styles.header_title_container}>
