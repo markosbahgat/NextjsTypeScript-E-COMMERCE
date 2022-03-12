@@ -49,13 +49,9 @@ const ProductCard: React.FC<Props> = ({product}) => {
                 <i className="fas fa-shopping-bag" onClick={() => dispatch(showModel(true))}></i>
             </div>
             <div className={styles.main_images}>
-                <Link href={'/product/' + product.id}>
-                    <a>
-                        <div className={styles.product_img} id={styles.active}>
-                            <Image src={product.image} alt="blue" id={styles.img} layout="fill" priority />
-                        </div>
-                    </a>
-                </Link>
+                <div className={styles.product_img} id={styles.active}>
+                    <Image src={product.image} alt="blue" id={styles.img} layout="fill" priority />
+                </div>
             </div>
         <div className={styles.shoe_details}>
                 <span className={styles.shoe_name}>{product.title.slice(0, 20)}....</span>
