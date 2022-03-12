@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nextjs TypeScript E-COMMERCE
 
-## Getting Started
+[![MarkosBahgata|](https://static.agilitycms.com/logos/full-logo-black-on-white-vercel_20200827182255_0.png)](https://nextjs-e-commerce-inky.vercel.app/home)
 
-First, run the development server:
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://nextjs-e-commerce-inky.vercel.app/home)
 
-```bash
+This App is an advanced E-commerce online store that have some,
+
+## Features
+
+- Cart Component
+- Checkout Component
+- Full Functional Landing page
+- Custome 404 page
+- authentication method 
+
+
+
+> The App was build for traning reasons
+
+## Technologies Used:
+
+This E-commerce App uses a number of open source technologies to work properly:
+
+- [React JS](https://reactjs.org/) - HTML enhanced for web apps.!
+- [Next JS](https://nextjs.org/) - The React Framework for Production.
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript is JavaScript with syntax for types.
+- [SASS](https://sass-lang.com/) - Sass is a stylesheet language that’s compiled to CSS.
+- [Redux Toolkit](https://redux-toolkit.js.org/) - The Redux Toolkit package is intended to be the standard way to write Redux logic.
+- [Redux Persist](https://www.npmjs.com/package/redux-persist) - Redux persist ships with react integration as a convenience
+- [React Hook Form](https://react-hook-form.com/) - Performant, flexible and extensible forms with easy-to-use validation.
+
+And of course This App itself is open source with a [public repository](https://github.com/markosbahgat/NextjsTypeScript-E-COMMERCE)
+ on GitHub.
+
+## Installation
+
+App requires [React Js](https://reactjs.org/) v10+ to run.
+Clone This Repo to your localHost and then,
+Install the dependencies and devDependencies and start the server ```-On Port 3003-```  by entering these Commends:
+
+```sh
+cd "/Destination for the Project Folder"
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For production environments...
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run build
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Thanks For Your timae and considiration.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Reach out for Markos Bahgat
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+>[_Portofolio Website_](http://markosbahgat.com)                                                             
+>[_LinkedIn Profile_](https://www.linkedin.com/in/markos-bahgat-9a7178216)                                   
+>[_Phone Number Or WhatsApp_]() : ``` +201208444364```
