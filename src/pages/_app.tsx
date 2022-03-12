@@ -22,9 +22,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 MyApp.getInitialProps = async (context:AppContext) => {
   const {ctx} = context;
   const cookies = nookies.get(ctx);
-  if(ctx.pathname === '/'){
+  if(ctx.pathname === '/' && cookies.authUser){
     ctx.res?.writeHead(302, {
       Location: '/home',
+      'Content-Type':'text/html; charset=utf-8',
+    })
+    ctx.res?.end();
+  }
+  else if(ctx.pathname === '/' || ctx.pathname === '/home' && !cookies.authUser){
+    ctx.res?.writeHead(302, {
+      Location: '/login',
       'Content-Type':'text/html; charset=utf-8',
     })
     ctx.res?.end();
