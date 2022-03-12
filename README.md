@@ -12,7 +12,7 @@ This App is an advanced E-commerce online store that have some,
 - Checkout Component
 - Full Functional Landing page
 - Custome 404 page
-- authontication method 
+- authentication method 
 
 
 
