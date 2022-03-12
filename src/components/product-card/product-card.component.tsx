@@ -2,7 +2,7 @@ import React, { HTMLProps } from 'react';
 import Image from 'next/image';
 import styles from './style.module.scss';
 import logo from 'assets/logo.jpg';
-import { IProWithAmount } from 'models/interfaces/product.model';
+import { IProduct } from 'models/interfaces/product.model';
 import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { appendCart, increament } from 'slices/cart.slice';
@@ -11,7 +11,7 @@ import { showModel } from 'slices/essential.slice';
 
 
 interface Props extends HTMLProps<HTMLAllCollection>{
-    product:IProWithAmount
+    product:IProduct
 }
 
 const handleSlidePage = (e:any) => {

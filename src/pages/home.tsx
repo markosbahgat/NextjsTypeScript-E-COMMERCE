@@ -10,7 +10,7 @@ const Home:NextPage = () => {
   const getauth = async () => {
     await storage.setItem("test", "this is a simple test from markos bahgat");
     const Test = await storage.getItem('persist:root');
-    console.log(JSON.parse(Test));
+    Test && console.log(JSON.parse(JSON.parse(Test).fetch));
     return Test
   }
   console.log(getauth());
