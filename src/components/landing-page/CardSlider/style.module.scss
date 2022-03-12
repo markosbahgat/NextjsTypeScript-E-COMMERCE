@@ -4,3 +4,8 @@
 .main_container{
  width: 80%;
 }
+@media screen and (max-width:1000px){
+    .main_container{
+        width: 90%;
+    }
+}

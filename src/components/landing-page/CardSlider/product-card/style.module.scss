@@ -3,7 +3,7 @@
 
 
 .product_card {
-  width: 300px;
+  width: 330px;
   border-radius: 25px;
   padding: 20px 30px 30px 30px;
   background: #fff;
@@ -45,8 +45,8 @@
 
 .product_card .main_images .product_img{
   position: relative;
-  height: 15vh;
-  width: 10vw;
+  height: 20vh;
+  min-width: 15vw;
   top: -40px;
   transition: opacity 0.5s ease;
   overflow: hidden;

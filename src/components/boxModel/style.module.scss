@@ -177,3 +177,46 @@
     color: #275df1;
     margin-right: 5%;
 }
+
+@media screen and (max-width:1000px) {
+    .section .popup_box{
+        position: relative;
+        min-width: 90vw;
+        padding: 1em;
+        width: 100%;
+        min-height: 50vh;
+        background: #fff;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .button{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        width: 90%;
+        button{
+            width: 80% !important;
+            height: 40px;
+        }
+        .cancel{
+            order: 3;
+            margin:0.2em  0 !important;
+        }
+        .send{
+            order: 1;
+            margin:0.2em  0 !important;
+        }
+        .clear{
+            order: 2;
+            margin:0.2em  0 !important;
+        }
+        
+    }
+
+}

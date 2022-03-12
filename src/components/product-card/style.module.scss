@@ -49,7 +49,7 @@
 .product_card .main_images .product_img{
   position: relative;
   height: 30vh;
-  width: 15vw;
+  min-width: 15vw;
   top: -40px;
   transition: opacity 0.5s ease;
   overflow: hidden;

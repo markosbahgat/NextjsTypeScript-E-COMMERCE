@@ -52,7 +52,6 @@
     text-transform: capitalize;
 }
 .slideShow_content a{
-    width: 40%;
     padding: 10px 30px;
     border: 1px solid white;
     margin: auto;
@@ -64,6 +63,7 @@
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     text-align: center;
+    white-space: nowrap;
 }
 
 .slideShow_content a:hover{
@@ -118,4 +118,15 @@
      background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
      position: absolute;
      top: 0;
+}
+@media screen and (max-width:1000px) {
+    .slideShow_content{
+        width: 85%;
+    }
+    .slideShow_content h1{
+        font-size: 30px;
+    }
+    .slideShow_content span{
+        width: 90%;
+    }
 }
