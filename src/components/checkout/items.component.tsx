@@ -45,7 +45,7 @@ const ItemsContianer:React.FC<ContainerProps> = ({cartProucts, total}) => {
       <hr/>
       <div className={styles.all_items_container}>
         {cartProucts.map(item => (
-          <Items product={item}/>  
+          <Items product={item} key={item.id}/>  
         ))}
       </div>
       <hr/>

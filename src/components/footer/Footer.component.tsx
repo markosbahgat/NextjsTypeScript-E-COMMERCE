@@ -12,16 +12,16 @@ const FixedBottomFooter: React.FC<Props> = () => {
           <span className={styles.logo_name}>MarkosBahgat</span>
         </div>
         <div className={styles.media_icons}>
-          <a href="https://www.facebook.com/markos.bahgat.376" target="_blank">
+          <a href="https://www.facebook.com/markos.bahgat.376" rel="noreferrer" target="_blank">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="https://twitter.com/bahgat_markos" target="_blank">
+          <a href="https://twitter.com/bahgat_markos" rel="noreferrer" target="_blank">
             <i className="fab fa-twitter"></i>
           </a>
-          <a href="https://www.instagram.com/markos_bahgat" target="_blank">
+          <a href="https://www.instagram.com/markos_bahgat" rel="noreferrer" target="_blank">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://www.linkedin.com/in/markos-bahgat-9a7178216" target="_blank">
+          <a href="https://www.linkedin.com/in/markos-bahgat-9a7178216" rel="noreferrer" target="_blank">
             <i className="fab fa-linkedin-in"></i>
           </a>
           <a href="#"><i className="fab fa-youtube" ></i></a>
