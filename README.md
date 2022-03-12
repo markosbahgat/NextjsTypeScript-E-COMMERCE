@@ -1,4 +1,4 @@
- Nextjs TypeScript E-COMMERCE
+# Nextjs TypeScript E-COMMERCE
 
 [![MarkosBahgata|](https://static.agilitycms.com/logos/full-logo-black-on-white-vercel_20200827182255_0.png)](https://nextjs-e-commerce-inky.vercel.app/home)
 
@@ -55,6 +55,6 @@ Thanks For Your timae and considiration.
 
 ## Reach out for Markos Bahgat
 
->[_Portofolio Website_](http://markosbahgat.com)
->[_LinkedIn Profile_](https://www.linkedin.com/in/markos-bahgat-9a7178216)
+>[_Portofolio Website_](http://markosbahgat.com)                                                             
+>[_LinkedIn Profile_](https://www.linkedin.com/in/markos-bahgat-9a7178216)                                   
 >[_Phone Number Or WhatsApp_]() : ``` +201208444364```
