@@ -1,15 +1,15 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
-import {IUser} from "models";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { IUser } from "models";
 import axios from "axios";
 import useRouter from "next/router";
-import {setCookie} from "nookies";
+import { setCookie } from "nookies";
 
 interface FetchError {
 	errorMessage: string | null;
 }
-export const PostNewUser = createAsyncThunk<IUser[], IUser, {rejectValue: FetchError}>(
+export const PostNewUser = createAsyncThunk<IUser[], IUser, { rejectValue: FetchError }>(
 	"fetch/newUser",
-	async (params: IUser, {rejectWithValue}) => {
+	async (params: IUser, { rejectWithValue }) => {
 		const router = useRouter;
 		try {
 			const response = await axios.post("https://jsonplaceholder.typicode.com/users", params);

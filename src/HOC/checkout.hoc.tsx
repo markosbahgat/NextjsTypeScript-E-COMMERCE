@@ -35,7 +35,7 @@ export const CHECKOUTHOC = (props: Props) => {
 					alignItems: "center",
 					margin: "100px auto",
 					fontSize: "30px",
-					textAlign:"center"
+					textAlign: "center",
 				}}>
 				<p style={{ fontSize: "30px" }}>Go Shopping and Get Some Products in the Cart, Man!</p>
 				<Link href="/products">

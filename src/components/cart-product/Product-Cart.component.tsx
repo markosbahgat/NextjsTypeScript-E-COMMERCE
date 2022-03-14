@@ -6,14 +6,14 @@ import { decreament, increament, removeCart } from "slices/cart.slice";
 import { useAppDispatch } from "../../store/hooks";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 
 interface Props {
 	product: IProWithAmount;
 }
 
 const ProductCart: React.FC<Props> = ({ product }) => {
-	const isMobile = useMediaQuery({query:"(max-width:1000px)"})
+	const isMobile = useMediaQuery({ query: "(max-width:1000px)" });
 	const dispatch = useAppDispatch();
 	const notify = () => toast("Product has been succsussfuly Deleted..!");
 	const handleDec = () => {
@@ -39,7 +39,7 @@ const ProductCart: React.FC<Props> = ({ product }) => {
 					</div>
 					<div className={styles.name_container}>
 						<h1>{product.title.slice(0, 11)}....</h1>
-						<p>{isMobile? `$${product.price}` :  product.description.slice(0, 30)}</p>
+						<p>{isMobile ? `$${product.price}` : product.description.slice(0, 30)}</p>
 					</div>
 				</div>
 				<div className={styles.data_container}>

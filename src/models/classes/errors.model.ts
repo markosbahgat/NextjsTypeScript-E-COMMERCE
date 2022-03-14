@@ -7,4 +7,12 @@ export class ConfilctError extends Error {}
 export class BadRequestError extends Error {}
 export class UnprocessabelEntityError extends Error {}
 
-export type HttpError = NetworkError | UnAuthonticatedError | ForbiddenError | BadRequestError | NotFoundError | UnprocessabelEntityError | ConfilctError | InternalServerError;
+export type HttpError =
+	| NetworkError
+	| UnAuthonticatedError
+	| ForbiddenError
+	| BadRequestError
+	| NotFoundError
+	| UnprocessabelEntityError
+	| ConfilctError
+	| InternalServerError;

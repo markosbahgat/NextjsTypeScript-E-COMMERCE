@@ -1,17 +1,17 @@
-import React, {useState} from "react";
-import {useForm} from "react-hook-form";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import styles from "./SignUpForm.module.scss";
-import {IUser} from "models";
+import { IUser } from "models";
 
 interface Props {
 	onSubmit: (data: IUser) => void;
 }
 
-const SignUpForm: React.FC<Props> = ({onSubmit}) => {
+const SignUpForm: React.FC<Props> = ({ onSubmit }) => {
 	const {
 		register,
 		handleSubmit,
-		formState: {errors},
+		formState: { errors },
 	} = useForm<IUser>();
 	const [showPassword1, setShowPassword1] = useState(false);
 	const handleClickShowPassword = () => {
@@ -30,7 +30,7 @@ const SignUpForm: React.FC<Props> = ({onSubmit}) => {
 						id={styles[`${errors.name && "error"}`]}
 						className={styles.input_field}
 						placeholder="Enter your Full Name...."
-						{...register("name", {required: true})}
+						{...register("name", { required: true })}
 					/>
 					<i className="fas fa-envelope fa-lg"></i>
 				</div>
@@ -56,7 +56,7 @@ const SignUpForm: React.FC<Props> = ({onSubmit}) => {
 						id={styles[`${errors.username && "error"}`]}
 						className={styles.input_field}
 						placeholder="Enter your userName"
-						{...register("username", {required: true})}
+						{...register("username", { required: true })}
 						type="text"
 					/>
 					<i className="fas fa-lock fa-lg"></i>
@@ -69,7 +69,7 @@ const SignUpForm: React.FC<Props> = ({onSubmit}) => {
 						type={showPassword1 ? "text" : "password"}
 						className={styles.input_field}
 						placeholder="Enter your password"
-						{...register("password", {required: true, pattern: /^[A-Za-z]+$/i})}
+						{...register("password", { required: true, pattern: /^[A-Za-z]+$/i })}
 					/>
 					<i className="fas fa-lock fa-lg"></i>
 					<div onClick={handleClickShowPassword} className={styles.visibility_icon}>

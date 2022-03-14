@@ -1,8 +1,8 @@
-import React, {HTMLProps} from "react";
-import {CircularProgress} from "@mui/material";
+import React, { HTMLProps } from "react";
+import { CircularProgress } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
-import {useAppSelector} from "../store/hooks";
-import {fetchState} from "slices/getProducts.slice";
+import { useAppSelector } from "../store/hooks";
+import { fetchState } from "slices/getProducts.slice";
 import styles from "styles/HOC.module.scss";
 import ProductCard from "components/product-card/product-card.component";
 
@@ -13,7 +13,7 @@ export const PRODUCTSHOC: React.FC<Props> = () => {
 	if (state.loading) {
 		return (
 			<Backdrop
-				sx={{color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 5, backgroundColor: "#222"}}
+				sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 5, backgroundColor: "#222" }}
 				open={true}>
 				<blockquote>still loading all produdcts data from the api</blockquote>
 				<CircularProgress />

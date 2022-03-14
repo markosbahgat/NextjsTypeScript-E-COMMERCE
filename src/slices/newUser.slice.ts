@@ -1,6 +1,6 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {PostNewUser} from "middelwares";
-import {RootState} from "../store/rootReducer";
+import { createSlice } from "@reduxjs/toolkit";
+import { PostNewUser } from "middelwares";
+import { RootState } from "../store/rootReducer";
 
 interface AuthState {
 	loading: boolean;
@@ -37,5 +37,5 @@ const authUserSlice = createSlice({
 });
 
 export const authReducer = authUserSlice.reducer;
-export const {checkUser} = authUserSlice.actions;
+export const { checkUser } = authUserSlice.actions;
 export const authState = (state: RootState) => state.auth;

@@ -1,2 +1,2 @@
-export { HomeHOC } from './home.hoc';
-export { PRODUCTSHOC } from './products.hoc';
+export { HomeHOC } from "./home.hoc";
+export { PRODUCTSHOC } from "./products.hoc";

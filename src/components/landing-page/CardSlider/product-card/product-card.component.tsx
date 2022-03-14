@@ -1,13 +1,13 @@
-import React, {HTMLProps} from "react";
+import React, { HTMLProps } from "react";
 import Image from "next/image";
 import styles from "./style.module.scss";
 import logo from "assets/logo.jpg";
-import {IProduct} from "models/interfaces/product.model";
+import { IProduct } from "models/interfaces/product.model";
 import Link from "next/link";
-import {useAppDispatch, useAppSelector} from "store/hooks";
-import {appendCart, increament} from "slices/cart.slice";
-import {cartState} from "slices/cart.slice";
-import {showModel} from "slices/essential.slice";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { appendCart, increament } from "slices/cart.slice";
+import { cartState } from "slices/cart.slice";
+import { showModel } from "slices/essential.slice";
 
 interface Props extends HTMLProps<HTMLAllCollection> {
 	product: IProduct;
@@ -24,16 +24,16 @@ const handleSlidePage = (e: any) => {
 		secondImg.classList.add("active");
 	}
 };
-const ProductCard: React.FC<Props> = ({product}) => {
+const ProductCard: React.FC<Props> = ({ product }) => {
 	const dispatch = useAppDispatch();
 	const state = useAppSelector(cartState);
 	const handleAppendCart = () => {
 		if (state.cartProducts.length > 0) {
 			const SameProuduct = state.cartProducts.find((item) => item.id === product.id);
-			if (SameProuduct) dispatch(increament({product: product, amount: SameProuduct.amount + 1}));
-			else dispatch(appendCart({...product, amount: 1}));
+			if (SameProuduct) dispatch(increament({ product: product, amount: SameProuduct.amount + 1 }));
+			else dispatch(appendCart({ ...product, amount: 1 }));
 		} else {
-			dispatch(appendCart({...product, amount: 1}));
+			dispatch(appendCart({ ...product, amount: 1 }));
 		}
 	};
 	return (

@@ -1,15 +1,17 @@
-.layout_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    .header, .footer, .childern_container{
-        width: 100%;
-        position: relative;
-    }
-    .childern_container{
-        min-height: 100vh;
-        margin-top: 6em;
-    }
+.layout_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	.header,
+	.footer,
+	.childern_container {
+		width: 100%;
+		position: relative;
+	}
+	.childern_container {
+		min-height: 100vh;
+		margin-top: 6em;
+	}
 }

@@ -1,6 +1,6 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {RootState} from "../store/rootReducer";
-import {IProduct} from "../models/interfaces/product.model";
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store/rootReducer";
+import { IProduct } from "../models/interfaces/product.model";
 
 interface CartProducts extends IProduct {
 	amount: number;
@@ -48,6 +48,6 @@ const cartSlice = createSlice({
 		},
 	},
 });
-export const {appendCart, increament, decreament, removeCart, clearCart} = cartSlice.actions;
+export const { appendCart, increament, decreament, removeCart, clearCart } = cartSlice.actions;
 export const cartReducer = cartSlice.reducer;
 export const cartState = (state: RootState) => state.cart;

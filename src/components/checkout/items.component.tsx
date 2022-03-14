@@ -1,15 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import {IProWithAmount} from "../../models/interfaces/product.model";
+import { IProWithAmount } from "../../models/interfaces/product.model";
 import styles from "./items.module.scss";
-import {useAppDispatch} from "../../store/hooks";
-import {showModel} from "slices/essential.slice";
+import { useAppDispatch } from "../../store/hooks";
+import { showModel } from "slices/essential.slice";
 
 interface ItemsProps {
 	product: IProWithAmount;
 }
 
-const Items: React.FC<ItemsProps> = ({product}) => {
+const Items: React.FC<ItemsProps> = ({ product }) => {
 	return (
 		<div className={styles.main_item_container}>
 			<div className={styles.img_container}>
@@ -32,7 +32,7 @@ interface ContainerProps {
 	total: number;
 }
 
-const ItemsContianer: React.FC<ContainerProps> = ({cartProucts, total}) => {
+const ItemsContianer: React.FC<ContainerProps> = ({ cartProucts, total }) => {
 	const dispatch = useAppDispatch();
 	const handleCartClick = () => {
 		dispatch(showModel(true));

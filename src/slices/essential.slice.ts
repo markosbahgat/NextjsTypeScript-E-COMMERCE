@@ -1,5 +1,5 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {RootState} from "../store/rootReducer";
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store/rootReducer";
 
 interface EssensialState {
 	boxModel: boolean;
@@ -19,6 +19,6 @@ const essentialSlice = createSlice({
 		},
 	},
 });
-export const {showModel} = essentialSlice.actions;
+export const { showModel } = essentialSlice.actions;
 export const essentialReducer = essentialSlice.reducer;
 export const essentialState = (state: RootState) => state.essential;

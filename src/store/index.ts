@@ -1,8 +1,8 @@
-import {Action, configureStore, ThunkAction} from "@reduxjs/toolkit";
-import {persistStore, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE} from "redux-persist";
-import {GetProducts} from "middelwares";
-import {fetchParams} from "models";
-import {RootState, persistedReducer} from "./rootReducer";
+import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import { persistStore, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from "redux-persist";
+import { GetProducts } from "middelwares";
+import { fetchParams } from "models";
+import { RootState, persistedReducer } from "./rootReducer";
 
 const store = configureStore({
 	reducer: persistedReducer,

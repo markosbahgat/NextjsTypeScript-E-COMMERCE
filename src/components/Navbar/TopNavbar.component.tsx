@@ -1,9 +1,9 @@
-import React, {HTMLProps, useState} from "react";
+import React, { HTMLProps, useState } from "react";
 import styles from "./Style.module.scss";
 import Link from "next/link";
-import {parseCookies} from "nookies";
-import {useAppDispatch} from "../../store/hooks";
-import {showModel} from "slices/essential.slice";
+import { parseCookies } from "nookies";
+import { useAppDispatch } from "../../store/hooks";
+import { showModel } from "slices/essential.slice";
 
 interface Props extends HTMLProps<HTMLAllCollection> {}
 
@@ -71,7 +71,7 @@ const TopNavbar: React.FC<Props> = () => {
 							<a>contactus</a>
 						</Link>
 					</li>
-					<li style={{position: "relative"}}>
+					<li style={{ position: "relative" }}>
 						<div id={styles.userIcon} onClick={handleDropdown}>
 							<i className="fas fa-user fa-lg"></i>
 						</div>

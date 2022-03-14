@@ -22,8 +22,7 @@ const SlidingCard: React.FC<Props> = ({ products }) => {
 			slidesPerView={isMobile ? 1 : 3}
 			navigation={!isMobile}
 			loop
-			className={styles.main_container}
-		>
+			className={styles.main_container}>
 			{products.map((item) => (
 				<SwiperSlide key={item.id}>
 					<ProductCard product={item} />

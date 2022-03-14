@@ -1,7 +1,7 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {IProduct} from "models";
-import {GetProducts} from "middelwares";
-import {RootState} from "../store/rootReducer";
+import { createSlice } from "@reduxjs/toolkit";
+import { IProduct } from "models";
+import { GetProducts } from "middelwares";
+import { RootState } from "../store/rootReducer";
 
 interface FetchState {
 	allProducts: IProduct[];
