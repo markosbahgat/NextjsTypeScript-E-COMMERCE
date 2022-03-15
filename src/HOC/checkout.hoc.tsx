@@ -1,9 +1,9 @@
-import CheckoutContainer from "components/checkout/checkout.component";
 import React, { HTMLProps } from "react";
 import { useAppSelector } from "store/hooks";
 import { cartState } from "slices/cart.slice";
 import ItemsContianer from "components/checkout/items.component";
 import Link from "next/link";
+import CheckoutForm from "components/checkout/checkout.component";
 interface Props extends HTMLProps<HTMLAllCollection> {}
 
 export const CHECKOUTHOC = (props: Props) => {
@@ -18,10 +18,9 @@ export const CHECKOUTHOC = (props: Props) => {
 					justifyContent: "space-around",
 					alignItems: "flex-start",
 					margin: "auto",
-					backgroundColor: "#eee",
 					minHeight: "100vh",
 				}}>
-				<CheckoutContainer />
+				<CheckoutForm/>
 				<ItemsContianer cartProucts={state.cartProducts} total={state.overAllPrice} />
 			</div>
 		);

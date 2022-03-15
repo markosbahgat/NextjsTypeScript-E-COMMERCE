@@ -4,7 +4,7 @@ import { CHECKOUTHOC } from "../HOC/checkout.hoc";
 
 const Checkout: NextPage = () => {
 	return (
-		<div>
+		<div style={{backgroundColor:"#eee"}}>
 			<CHECKOUTHOC />
 		</div>
 	);
