@@ -1,12 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 
-.title {
-	text-align: left;
-	font-size: 25px;
-	font-weight: 500;
-	margin-bottom: 2em;
-}
+
 
  .field {
 	width: 45%;
@@ -58,7 +53,7 @@
 	font-size: 17px;
 	font-weight: 500;
 }
- .field button {
+ .field p {
 	width: 100%;
 	height: calc(100% + 5px);
 	border: none;
@@ -72,14 +67,6 @@
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: 0.5s ease;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
-	-webkit-transition: 0.5s ease;
-	-moz-transition: 0.5s ease;
-	-ms-transition: 0.5s ease;
-	-o-transition: 0.5s ease;
 }
  .firstNext {
 	width: 95%;
@@ -95,18 +82,18 @@
 	text-transform: uppercase;
 	transition: 0.5s ease;
 }
- .field button:hover {
+ .field p:hover {
 	background: #000;
 
 }
- #btns button {
+ #btns p {
 	margin-top: -20px !important;
 }
- #btns button#prev {
+ #btns p#prev {
 	margin-right: 3px;
 	font-size: 17px;
 }
- #btns button#next {
+ #btns p#next {
 	margin-left: 3px;
 
 }

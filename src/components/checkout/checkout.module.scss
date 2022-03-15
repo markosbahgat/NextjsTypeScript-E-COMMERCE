@@ -15,6 +15,7 @@
 	-o-border-radius: 10px;
 }
 
+
 .container header {
 	font-size: 35px;
 	font-weight: 600;
@@ -24,115 +25,21 @@
 .container .form_outer {
 	width: 100%;
 	overflow: hidden;
+
 }
 .container .form_outer form {
 	display: flex;
-	width: 400%;
+	flex-direction: row;
+	align-items: center;
+	width: 300%;
 	
 }
 .form_outer form .page {
-	width: 25%;
+	width: 35%;
 	transition: margin-left 0.3s ease-in-out;
 }
-.form_outer form .page .title {
-	text-align: left;
-	font-size: 25px;
-	font-weight: 500;
-	margin-bottom: 2em;
-}
-.form_outer form .page .field {
-	width: 45%;
-	height: 45px;
-	display: flex;
-	position: relative;
-	align-items: center;
-	
-}
-.form_outer form .page .fullWidth_field {
-	width: 90%;
-	height: 45px;
-	margin: 45px 0;
-	display: flex;
-	position: relative;
-	align-items: center;
 
-}
-form .page .field .label {
-	position: absolute;
-	top: -30px;
-	font-weight: 500;
 
-}
-form .page .fullWidth_field .label {
-	position: absolute;
-	top: -30px;
-	font-weight: 500;
-}
-form .page .field input {
-	height: 100%;
-	width: 90%;
-	border: 1px solid lightgrey;
-	border-radius: 5px;
-	padding-left: 15px;
-	font-size: 18px;
-}
-form .page .fullWidth_field input {
-	height: 90%;
-	width: 95%;
-	border: 1px solid lightgrey;
-	border-radius: 5px;
-	padding-left: 15px;
-	font-size: 18px;
-}
-form .page .field select {
-	width: 100%;
-	padding-left: 10px;
-	font-size: 17px;
-	font-weight: 500;
-}
-form .page .field p {
-	width: 100%;
-	height: calc(100% + 5px);
-	border: none;
-	background: #d33f8d;
-	margin-top: -20px;
-	border-radius: 5px;
-	color: #fff;
-	cursor: pointer;
-	font-size: 18px;
-	font-weight: 500;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: 0.5s ease;
-}
-form .page .firstNext {
-	width: 95%;
-	height: calc(100% + 5px);
-	border: none;
-	background: #d33f8d;
-	border-radius: 5px;
-	color: #fff;
-	cursor: pointer;
-	font-size: 18px;
-	font-weight: 500;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: 0.5s ease;
-}
-form .page .field p:hover {
-	background: #000;
-
-}
-form .page #btns p {
-	margin-top: -20px !important;
-}
-form .page #btns p#prev {
-	margin-right: 3px;
-	font-size: 17px;
-}
-form .page #btns p#next {
-	margin-left: 3px;
-}
 .container .progress_bar {
 	display: flex;
 	margin: 40px auto;
@@ -230,4 +137,13 @@ form .page #btns p#next {
 		width: 40%;
 	}
 }
+.page#NextMove1{
+	margin-left: -35%;
+}
+.page#NextMove2{
+	margin-left: -70%
+}
+.page#NextStedy{
+	margin-left: 35%;
 
+}
