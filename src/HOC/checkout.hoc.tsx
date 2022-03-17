@@ -13,7 +13,7 @@ export const CHECKOUTHOC = (props: Props) => {
 	if (state.cartProducts.length > 0) {
 		return (
 			<div className={styles.checkout_container}>
-				<CheckoutForm/>
+				<CheckoutForm />
 				<ItemsContianer cartProucts={state.cartProducts} total={state.overAllPrice} />
 			</div>
 		);
