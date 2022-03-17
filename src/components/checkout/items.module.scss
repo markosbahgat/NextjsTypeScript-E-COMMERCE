@@ -108,3 +108,23 @@
 		}
 	}
 }
+@media screen and (max-width:1000px){
+	.items_contaienr {
+		background-color: white;
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		padding: 1em;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+		margin-top: 2em;
+
+	}
+}

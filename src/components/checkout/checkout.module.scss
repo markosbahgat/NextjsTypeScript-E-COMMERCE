@@ -69,6 +69,8 @@
 	font-weight: 500;
 	font-size: 17px;
 	line-height: 25px;
+	z-index: 3;
+	background-color: #fff;
 }
 .progress_bar .step .bullet#active {
 	border-color: #d43f8d;
@@ -88,10 +90,11 @@
 	position: absolute;
 	content: "";
 	bottom: 9px;
-	right: -110px;
+	left: 25px;
 	height: 3px;
-	width: 100px;
+	width: 9vw;
 	background: #262626;
+	z-index: 5;
 }
 .progress_bar .step .bullet#active:after {
 	background: #d43f8d;
@@ -115,7 +118,7 @@
 .progress_bar .step .check {
 	position: absolute;
 	left: 50%;
-	top: 70%;
+	top: 72%;
 	font-size: 15px;
 	transform: translate(-50%, -50%);
 	display: none;
@@ -123,6 +126,8 @@
 	-moz-transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	-o-transform: translate(-50%, -50%);
+	z-index: 5;
+	cursor: pointer;
 }
 .progress_bar .step .check#active {
 	display: block;
@@ -146,4 +151,21 @@
 .page#NextStedy{
 	margin-left: 35%;
 
+}
+
+@media screen and (max-width:1000px){
+	.container {
+		width: 100%;
+		margin: 2em 0;
+	}
+	.progress_bar .step .bullet:before,
+	.progress_bar .step .bullet:after {
+		position: absolute;
+		content: "";
+		bottom: 9px;
+		left: 25px;
+		height: 3px;
+		width: 15vw;
+		background: #262626;
+	}
 }

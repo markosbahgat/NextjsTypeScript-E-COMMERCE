@@ -1,16 +1,20 @@
 import React from 'react'
 import styles from './contactInfo.module.scss';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { IContact } from '../../models/interfaces/checkoutContactInfo.model';
+import { UseFormRegister } from 'react-hook-form';
+import { FormValues } from 'components/checkout/Checkout.component';
 
 interface Props  { 
     handleNextBtn: () => void,
+    register: UseFormRegister<FormValues>,
+    isValid:boolean,
 }
 
-const ShippingInfo: React.FC<Props> = ({handleNextBtn}) => {
-    const {register} = useForm<IContact>()
+const ShippingInfo: React.FC<Props> = ({handleNextBtn, register, isValid}) => {
+    const handleNext = () => {
+        handleNextBtn()
+    }
   return (
-    <div style={{position:"relative"}}>
+    <div>
     <div className={styles.title}>Basic Info:</div>
     <div className={styles.names_container}>
         <div className={styles.field}>
@@ -36,10 +40,10 @@ const ShippingInfo: React.FC<Props> = ({handleNextBtn}) => {
     </div>
     <div className={styles.fullWidth_field}>
         <div className={styles.label}>Postal Code</div>
-        <input type="number" {...register("Postal_Code")}/>
+        <input type="number" {...register("Postal_Code", { required:{value:true, message: "please enter the postal code because its required"}})}/>
     </div>
     <div className={styles.fullWidth_field}>
-        <button   className={styles.firstNext} id={styles.next} onClick={handleNextBtn}>
+        <button type='button' disabled={!isValid} className={styles.firstNext} id={styles.next} onClick={handleNext}>
             Next
         </button>
     </div>

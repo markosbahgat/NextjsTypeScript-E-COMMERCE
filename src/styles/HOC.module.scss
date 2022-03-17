@@ -1,3 +1,5 @@
+@import 'styles/_variables.scss';
+
 .products_container {
 	padding: 10%;
 	display: flex;
@@ -10,6 +12,9 @@
 	min-height: 100vh;
 	background-image: linear-gradient(135deg, #43cbff 10%, #9708cc 100%);
 	min-height: 100vh;
+}
+.products_container#dark{
+	background-image: linear-gradient(135deg, #000000 10%, #4e006a 100%);
 }
 .price_container {
 	width: 100%;

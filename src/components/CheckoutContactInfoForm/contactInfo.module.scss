@@ -9,17 +9,18 @@
 }
 
  .field {
-	width: 45%;
+	width: 50%;
 	height: 45px;
 	display: flex;
 	position: relative;
 	align-items: center;
+	margin: 0px 0px;
 	
 }
  .fullWidth_field {
-	width: 90%;
+	width: 100%;
 	height: 45px;
-	margin: 45px 0;
+	margin: 45px 0px;
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -29,16 +30,18 @@
 	position: absolute;
 	top: -30px;
 	font-weight: 500;
+	white-space: nowrap;
 
 }
  .fullWidth_field .label {
 	position: absolute;
 	top: -30px;
 	font-weight: 500;
+	white-space: nowrap;
 }
  .field input {
 	height: 100%;
-	width: 90%;
+	width: 100%;
 	border: 1px solid lightgrey;
 	border-radius: 5px;
 	padding-left: 15px;
@@ -99,6 +102,10 @@
 	background: #000;
 
 }
+.fullWidth_field button:disabled{
+	background-color: #888;
+	cursor: auto;
+}
  #btns button {
 	margin-top: -20px !important;
 }
@@ -114,9 +121,22 @@
 .names_container{
 	display: flex;
 	flex-direction: row;
+	width: 95%;
+	justify-content: space-between;
 	div{
 		display: inline-flex;
-		width: 40%;
+		width: 45%;
 	}
 }
 
+@media screen and (max-width:1000px){
+	.names_container{
+		display: flex;
+		flex-direction: column;
+		.field{
+			display: inline-flex;
+			width: 100%;
+			margin-top: 3em;
+		}
+	}
+}

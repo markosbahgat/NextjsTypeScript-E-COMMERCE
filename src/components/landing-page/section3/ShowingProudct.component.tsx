@@ -2,12 +2,16 @@ import React from "react";
 import Image from "next/image";
 import img from "assets/img1.jpg";
 import styles from "./style.module.scss";
+import { useAppSelector } from 'store/hooks';
+import { essentialState } from 'slices/essential.slice';
+import Link from 'next/link';
 
 interface Props {}
 
 const ShowingProduct: React.FC<Props> = () => {
+	const state = useAppSelector(essentialState);
 	return (
-		<div className={styles.main_container}>
+		<div className={styles.main_container} id={styles[`${state.darkMode && 'dark'}`]}>
 			<div className={styles.header_title_container}>
 				<h1>this is title forr showing product</h1>
 			</div>
@@ -32,7 +36,11 @@ const ShowingProduct: React.FC<Props> = () => {
 			</div>
 			<div className={styles.buttons_container}>
 				<button>
-					Shop Now <i className="fa-solid fa-arrow-right-long"></i>
+					<Link href="/products">
+						<a>
+							Shop Now <i className="fa-solid fa-arrow-right-long"></i>
+						</a>
+					</Link>
 				</button>
 			</div>
 		</div>

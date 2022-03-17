@@ -6,3 +6,11 @@ export interface IContact {
     Postal_Code: string,
     Email:string
 }
+export interface IShipping {
+    Email_Address:string,
+    fuck:string,
+}
+export interface IConfirm {
+    Password:string,
+    UserName:string,
+}

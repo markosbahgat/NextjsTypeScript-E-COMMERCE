@@ -1,2 +1,5 @@
-.main_home_container {
+@import 'styles/_variables.scss';
+
+.main_home_container#dark {
+    @include Dark_Mode
 }

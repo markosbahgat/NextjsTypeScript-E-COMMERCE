@@ -1,31 +1,32 @@
 import React from 'react'
 import styles from './ShippingInfo.module.scss';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { IContact } from '../../models/interfaces/checkoutContactInfo.model';
+import { UseFormRegister } from 'react-hook-form';
+import { FormValues } from 'components/checkout/Checkout.component';
 
 interface Props  { 
     handlePrevBtn: () => void,
     handleNextBtn: () => void,
+    register: UseFormRegister<FormValues>,
+    isValid: boolean
 }
 
-const ContactInfo: React.FC<Props> = ({handleNextBtn,  handlePrevBtn}) => {
-    const {register} = useForm<IContact>()
+const ContactInfo: React.FC<Props> = ({handleNextBtn,  handlePrevBtn, register, isValid}) => {
   return (
     <div>
         <div className={styles.title}>Contact Info:</div>
         <div className={styles.field}>
             <div className={styles.label}>Email Address</div>
-            <input type="text" />
+              <input type="text"  {...register("Email_Address", {required:true})}/>
         </div>
         <div className={styles.field}>
             <div className={styles.label}>Phone Number</div>
-            <input type="Number" />
+              <input type="Number" {...register("fuck")}/>
         </div>
         <div className={styles.field} id={styles.btns}>
-            <button className={styles.prev_1} id={styles.prev} onClick={handlePrevBtn}>
+            <button type="button" className={styles.prev_1} id={styles.prev} onClick={handlePrevBtn}>
                 Previous
             </button>
-            <button className={styles.next_1} id={styles.next} onClick={handleNextBtn}>
+            <button type="button" disabled={!isValid} className={styles.next_1} id={styles.next} onClick={handleNextBtn}>
                 Next
             </button>
         </div>

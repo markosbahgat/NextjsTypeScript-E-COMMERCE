@@ -3,11 +3,11 @@ import Image from "next/image";
 import styles from "./style.module.scss";
 import logo from "assets/logo.jpg";
 import { IProduct } from "models/interfaces/product.model";
-import Link from "next/link";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import { appendCart, increament } from "slices/cart.slice";
-import { cartState } from "../../slices/cart.slice";
+import { cartState } from "slices/cart.slice";
 import { showModel } from "slices/essential.slice";
+import { essentialState } from '../../slices/essential.slice';
 
 interface Props extends HTMLProps<HTMLAllCollection> {
 	product: IProduct;
@@ -27,6 +27,7 @@ const handleSlidePage = (e: any) => {
 const ProductCard: React.FC<Props> = ({ product }) => {
 	const dispatch = useAppDispatch();
 	const state = useAppSelector(cartState);
+	const EssentialState = useAppSelector(essentialState);
 	const handleAppendCart = () => {
 		if (state.cartProducts.length > 0) {
 			const SameProuduct = state.cartProducts.find((item) => item.id === product.id);
@@ -37,7 +38,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 		}
 	};
 	return (
-		<div className={styles.product_card}>
+		<div className={styles.product_card} id={styles[`${EssentialState.darkMode && 'dark'}`]}>
 			<div className={styles.logo_cart}>
 				<div className={styles.cart_img_container}>
 					<Image src={logo} alt="logo" className={styles.cart_img} />

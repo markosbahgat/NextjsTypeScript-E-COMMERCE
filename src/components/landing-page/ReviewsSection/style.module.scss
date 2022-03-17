@@ -1,3 +1,5 @@
+@import 'styles/_variables.scss';
+
 .main_container {
 	height: 80vh;
 	background-color: #eee;
@@ -70,7 +72,16 @@
 		}
 	}
 }
+.main_container#dark {
+	@include Dark_Mode;
+	margin-bottom:1px;
 
+}
+.main_container#dark .post_container{
+	h3{
+		color: black;
+	}
+}
 @media screen and (max-width: 1000px) {
 	.main_container {
 		height: fit-content;

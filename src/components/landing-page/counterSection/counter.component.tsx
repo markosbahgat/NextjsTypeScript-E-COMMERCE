@@ -1,10 +1,13 @@
 import React from "react";
+import { essentialState } from "slices/essential.slice";
+import { useAppSelector } from "store/hooks";
 import styles from "./style.module.scss";
 
 interface Props {}
 
 const Counter: React.FC<Props> = () => {
 	const [counter, setCounter] = React.useState<number>(0);
+	const state = useAppSelector(essentialState);
 	React.useEffect(() => {
 		let time = setInterval(() => {
 			setCounter((counter) => counter + 100);
@@ -16,7 +19,7 @@ const Counter: React.FC<Props> = () => {
 
 	return (
 		<div>
-			<div className={styles.main_container}>
+			<div className={styles.main_container} id={styles[`${state.darkMode && 'dark'}`]}>
 				<div className={styles.counter_container}>
 					<i className="fa-solid fa-users"></i>
 					<h3>{(counter + 1056415).toLocaleString()}</h3>

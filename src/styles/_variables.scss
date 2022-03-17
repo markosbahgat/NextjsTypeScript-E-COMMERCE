@@ -1,0 +1,9 @@
+@mixin Dark_Mode {
+    background-color: black;
+    color: white;
+}
+@mixin Light_Mode {
+    background-color: #eee;
+    color: black;
+    
+}

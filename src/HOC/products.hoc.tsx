@@ -1,15 +1,17 @@
 import React, { HTMLProps } from "react";
 import { CircularProgress } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
-import { useAppSelector } from "../store/hooks";
+import { useAppSelector } from "store/hooks";
 import { fetchState } from "slices/getProducts.slice";
 import styles from "styles/HOC.module.scss";
 import ProductCard from "components/product-card/product-card.component";
+import { essentialState } from 'slices/essential.slice';
 
 interface Props extends HTMLProps<HTMLAllCollection> {}
 
 export const PRODUCTSHOC: React.FC<Props> = () => {
 	const state = useAppSelector(fetchState);
+	const EssentialState = useAppSelector(essentialState);
 	if (state.loading) {
 		return (
 			<Backdrop
@@ -22,7 +24,7 @@ export const PRODUCTSHOC: React.FC<Props> = () => {
 	} else {
 		return (
 			<>
-				<div className={styles.products_container}>
+				<div className={styles.products_container} id={styles[`${EssentialState.darkMode && 'dark'}`]}>
 					{state.allProducts.map((product) => (
 						<ProductCard key={product.id} product={product} />
 					))}

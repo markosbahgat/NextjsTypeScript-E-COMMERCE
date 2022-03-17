@@ -6,11 +6,13 @@ import { fetchState } from "../slices/getProducts.slice";
 import ShowingProduct from "components/landing-page/section3/ShowingProudct.component";
 import Counter from "components/landing-page/counterSection/counter.component";
 import ReviewsSection from "components/landing-page/ReviewsSection/reviewsSection.component";
+import { essentialState } from '../slices/essential.slice';
 
 interface Props extends HTMLProps<HTMLAllCollection> {}
 
 export const HomeHOC = (props: Props) => {
 	const state = useAppSelector(fetchState);
+	
 	return (
 		<>
 			<ImageSlider />

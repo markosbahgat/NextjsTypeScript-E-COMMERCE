@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import styles from "./checkout.module.scss";
 import { useForm } from 'react-hook-form';
-import { IContact } from '../../models/interfaces/checkoutContactInfo.model';
+import { IContact, IShipping, IConfirm } from '../../models/interfaces/checkoutContactInfo.model';
 import ContactInfo from "components/CheckoutContactInfoForm/ContactInfo.component";
 import ShippingInfo from "components/ShippingInfo/ShippingInfo.component";
 import ConfirmCheckout from "components/ConfirmCheckout/ConfirmCheckout.component";
 
 interface Props { }
+export interface FormValues extends IContact, IShipping, IConfirm {}
 
 const CheckoutForm: React.FC<Props> = () => {
-	const { register, handleSubmit, formState: { errors } } = useForm<IContact>();
+	const { register, handleSubmit, watch, formState: { errors, isValid } } = useForm<FormValues>({mode:"all"});
 	const [IsActive, setActive] = useState<number>(0);
-	const onSubmit = (data: IContact) => {
+	const onSubmit = (data: FormValues) => {
 		console.log(data)
 	};
-
+	
 	
 	const handleNextBtn = () => {
 		console.log(IsActive)
@@ -26,11 +27,12 @@ const CheckoutForm: React.FC<Props> = () => {
 			alert("Your Form Successfully Signed up");
 			window.location.reload();
 		}, 800);
-	};
+
+	}
 	const handlePrevBtn = () => {
 		setActive((IsActive) => IsActive - 1);
 	};
-	
+	const props = { handleNextBtn, handlePrevBtn, register, isValid, handleSubmitBtn };
 	return (
 		<div className={styles.container}>
 			<header>Checkout information</header>
@@ -40,7 +42,7 @@ const CheckoutForm: React.FC<Props> = () => {
 			<div className={styles.bullet} id={styles[`${IsActive && "active"}`]}>
 				<span>1</span>
 			</div>
-			<div className={styles.check} id={styles[`${IsActive && "active"}`]}>
+			<div className={styles.check} id={styles[`${IsActive && "active"}`]} onClick={() => setActive(0)}>
 				<i className="fa-solid fa-check"></i>
 			</div>
 		</div>
@@ -49,7 +51,7 @@ const CheckoutForm: React.FC<Props> = () => {
 			<div className={styles.bullet} id={styles[`${IsActive > 1 && "active"}`]}>
 				<span>2</span>
 			</div>
-			<div className={styles.check} id={styles[`${IsActive > 1 && "active"}`]}>
+			<div className={styles.check} id={styles[`${IsActive > 1 && "active"}`]} onClick={() => setActive(1)}>
 				<i className="fa-solid fa-check"></i>
 			</div>
 		</div>
@@ -58,29 +60,31 @@ const CheckoutForm: React.FC<Props> = () => {
 			<div className={styles.bullet} id={styles[`${IsActive > 2 && "active"}`]}>
 				<span>3</span>
 			</div>
-			<div className={styles.check} id={styles[`${IsActive > 2 && "active"}`]}>
+			<div className={styles.check} id={styles[`${IsActive > 2 && "active"}`]} onClick={() => setActive(2)}>
 				<i className="fa-solid fa-check"></i>
 			</div>
 			</div>
 			</div>
-			{IsActive < 3 ? (
-				<div className={styles.form_outer}>
-					<form onSubmit={handleSubmit(onSubmit)}>
+			<div className={styles.form_outer} hidden={IsActive >= 3 && true}>
+				<form onSubmit={handleSubmit(onSubmit)}>
+					{IsActive >= 0 && (
 						<div className={styles.page}  id={styles[`${IsActive >= 1 && 'NextMove1'}`]}>
-							<ContactInfo handleNextBtn={handleNextBtn} />
+							<ContactInfo {...props}/>
 						</div>
+					)}
+					{IsActive >= 1 && (
 						<div className={styles.page} id={styles[`${IsActive === 2  && 'NextMove2'}`]}>
-							<ShippingInfo handlePrevBtn={handlePrevBtn} handleNextBtn={handleNextBtn} />
+							<ShippingInfo {...props}/>
 						</div>
-							<div className={styles.page} id={styles[`${IsActive >= 2 && 'NextStedy'}`]}>
-							<ConfirmCheckout handlePrevBtn={handlePrevBtn} handleSubmitBtn={handleSubmitBtn} />
+					)}
+					{IsActive >= 2 && (
+						<div className={styles.page} id={styles[`${IsActive >= 2 && 'NextStedy'}`]}>
+							<ConfirmCheckout {...props}/>
 						</div>
-					</form> 
-				</div>
-
-			) : ( 
-					<h1>Congratulations Mohter Fucker</h1>
-			)}
+					)}
+				</form> 
+			</div>
+			<h1 hidden={IsActive < 3 && true}>Congratulations Mohter Fucker</h1>
 	</div>
 	);
 };

@@ -100,6 +100,10 @@
 	margin-left: 3px;
 
 }
+.field button:disabled{
+	background-color: #888;
+	cursor: auto;
+}
 
 .names_container{
 	display: flex;

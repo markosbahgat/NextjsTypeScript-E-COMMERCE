@@ -24,6 +24,9 @@ const ImageSlider: React.FC<Props> = () => {
 	useEffect(() => {
 		Slider();
 	}, []);
+	const handleScroll = () => {
+		window.scrollTo({top:1850, behavior:"smooth"})
+	}
 	return (
 		<div className={styles.banner}>
 			<div className={styles.slider}>
@@ -37,7 +40,7 @@ const ImageSlider: React.FC<Props> = () => {
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur consequuntur ullam illo.
 						Aliquid, nam incidunt saepe iure quo ipsum..!!
 					</span>
-					<a>Explore Latest Categories</a>
+					<a onClick={handleScroll}>Explore Latest Categories</a>
 				</div>
 			</div>
 		</div>

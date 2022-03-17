@@ -3,23 +3,16 @@ import { useAppSelector } from "store/hooks";
 import { cartState } from "slices/cart.slice";
 import ItemsContianer from "components/checkout/items.component";
 import Link from "next/link";
-import CheckoutForm from "components/checkout/checkout.component";
-interface Props extends HTMLProps<HTMLAllCollection> {}
+import CheckoutForm from "components/checkout/Checkout.component";
+import styles from 'styles/CheckoutHOC.module.scss';
+
+interface Props extends HTMLProps<HTMLAllCollection> { }
 
 export const CHECKOUTHOC = (props: Props) => {
 	const state = useAppSelector(cartState);
 	if (state.cartProducts.length > 0) {
 		return (
-			<div
-				style={{
-					width: "90%",
-					display: "flex",
-					flexDirection: "row",
-					justifyContent: "space-around",
-					alignItems: "flex-start",
-					margin: "auto",
-					minHeight: "100vh",
-				}}>
+			<div className={styles.checkout_container}>
 				<CheckoutForm/>
 				<ItemsContianer cartProucts={state.cartProducts} total={state.overAllPrice} />
 			</div>
@@ -32,9 +25,9 @@ export const CHECKOUTHOC = (props: Props) => {
 					flexDirection: "column",
 					justifyContent: "center",
 					alignItems: "center",
-					margin: "100px auto",
 					fontSize: "30px",
 					textAlign: "center",
+					minHeight: "100vh",
 				}}>
 				<p style={{ fontSize: "30px" }}>Go Shopping and Get Some Products in the Cart, Man!</p>
 				<Link href="/products">
