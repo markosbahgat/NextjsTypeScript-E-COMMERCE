@@ -3,7 +3,7 @@ import { useAppSelector } from "store/hooks";
 import { cartState } from "slices/cart.slice";
 import ItemsContianer from "components/checkout/items.component";
 import Link from "next/link";
-import CheckoutForm from "components/checkout/Checkout.component";
+import CheckoutForm from "components/checkout/checkoutForm.component";
 import styles from 'styles/CheckoutHOC.module.scss';
 
 interface Props extends HTMLProps<HTMLAllCollection> { }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './ShippingInfo.module.scss';
 import { UseFormRegister } from 'react-hook-form';
-import { FormValues } from 'components/checkout/Checkout.component';
+import { FormValues } from 'components/checkout/checkoutForm.component';
 
 interface Props  { 
     handlePrevBtn: () => void,
