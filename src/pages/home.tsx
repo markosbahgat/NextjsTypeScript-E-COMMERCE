@@ -6,9 +6,9 @@ import storage from "store/storage";
 import { essentialState } from "slices/essential.slice";
 import { useAppSelector } from "store/hooks";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from "next-i18next";
 
-export async function getStaticProps({ locale }: any) {
+
+export async function getServerSideProps({ locale }: any) {
 	return {
 		props: {
 			...(await serverSideTranslations(locale, ['common', 'navbar']))
@@ -17,7 +17,6 @@ export async function getStaticProps({ locale }: any) {
 }
 
 const Home: NextPage = (props) => {
-	const {t} = useTranslation('common')
 	const getauth = async () => {
 		await storage.setItem("test", "this is a simple test from markos bahgat");
 		const Test = await storage.getItem("persist:root");
@@ -32,5 +31,6 @@ const Home: NextPage = (props) => {
 		</div>
 	);
 };
+
 
 export default Home;

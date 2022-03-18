@@ -6,6 +6,10 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   images: { domains: ['fakestoreapi.com'] },
+  trailingSlash: true,
+  future: {
+    webpack5: true
+  },
 }
 
 module.exports = nextConfig
