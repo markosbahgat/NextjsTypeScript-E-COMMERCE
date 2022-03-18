@@ -5,11 +5,13 @@ import { IContact, IShipping, IConfirm } from '../../models/interfaces/checkoutC
 import ContactInfo from "components/CheckoutContactInfoForm/ContactInfo.component";
 import ShippingInfo from "components/ShippingInfo/ShippingInfo.component";
 import ConfirmCheckout from "components/ConfirmCheckout/ConfirmCheckout.component";
+import { useTranslation } from "next-i18next";
 
 interface Props { }
 export interface FormValues extends IContact, IShipping, IConfirm {}
 
 const CheckoutForm: React.FC<Props> = () => {
+	const { t } = useTranslation('common');
 	const { register, handleSubmit, watch, formState: { errors, isValid } } = useForm<FormValues>({mode:"all"});
 	const [IsActive, setActive] = useState<number>(0);
 	const onSubmit = (data: FormValues) => {
@@ -35,7 +37,7 @@ const CheckoutForm: React.FC<Props> = () => {
 	const props = { handleNextBtn, handlePrevBtn, register, isValid, handleSubmitBtn };
 	return (
 		<div className={styles.container}>
-			<header>Checkout information</header>
+			<header>{t('Checkout information')}</header>
 			<div className={styles.progress_bar}>
 			<div className={styles.step}>
 			<p id={styles[`${IsActive && "active"}`]}>Name</p>

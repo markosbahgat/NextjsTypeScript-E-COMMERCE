@@ -4,12 +4,14 @@ import { IProWithAmount } from "../../models/interfaces/product.model";
 import styles from "./items.module.scss";
 import { useAppDispatch } from "../../store/hooks";
 import { showModel } from "slices/essential.slice";
+import { useTranslation } from 'next-i18next';
 
 interface ItemsProps {
 	product: IProWithAmount;
 }
 
 const Items: React.FC<ItemsProps> = ({ product }) => {
+	
 	return (
 		<div className={styles.main_item_container}>
 			<div className={styles.img_container}>
@@ -33,6 +35,7 @@ interface ContainerProps {
 }
 
 const ItemsContianer: React.FC<ContainerProps> = ({ cartProucts, total }) => {
+	const { t } = useTranslation("common");
 	const dispatch = useAppDispatch();
 	const handleCartClick = () => {
 		dispatch(showModel(true));
@@ -40,8 +43,8 @@ const ItemsContianer: React.FC<ContainerProps> = ({ cartProucts, total }) => {
 	return (
 		<div className={styles.items_contaienr}>
 			<div className={styles.header_container}>
-				<h1>{cartProucts.length} ITEMS</h1>
-				<button onClick={handleCartClick}>Edit</button>
+				<h1>{cartProucts.length} {t('ITEMS')}</h1>
+				<button onClick={handleCartClick}>{t('Edit')}</button>
 			</div>
 			<hr />
 			<div className={styles.all_items_container}>
@@ -52,15 +55,15 @@ const ItemsContianer: React.FC<ContainerProps> = ({ cartProucts, total }) => {
 			<hr />
 			<div className={styles.total_container}>
 				<p>
-					<span>Shipping</span>
+					<span>{t('Shipping')}</span>
 					<span>$ 15.99</span>
 				</p>
 				<p>
-					<span>Total</span>
+					<span>{t('Total')}</span>
 					<span>$ {Math.round(total)}</span>
 				</p>
 				<p>
-					<span>TOTAL TO PAY</span>
+					<span>{t('TOTAL TO PAY')}</span>
 					<span>$ {Math.round(total + 15.99)}</span>
 				</p>
 			</div>

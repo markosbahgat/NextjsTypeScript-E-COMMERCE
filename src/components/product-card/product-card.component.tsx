@@ -8,6 +8,7 @@ import { appendCart, increament } from "slices/cart.slice";
 import { cartState } from "slices/cart.slice";
 import { showModel } from "slices/essential.slice";
 import { essentialState } from '../../slices/essential.slice';
+import { useTranslation } from "next-i18next";
 
 interface Props extends HTMLProps<HTMLAllCollection> {
 	product: IProduct;
@@ -25,6 +26,7 @@ const handleSlidePage = (e: any) => {
 	}
 };
 const ProductCard: React.FC<Props> = ({ product }) => {
+	const { t } = useTranslation('common');
 	const dispatch = useAppDispatch();
 	const state = useAppSelector(cartState);
 	const EssentialState = useAppSelector(essentialState);
@@ -78,7 +80,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 			</div>
 			<div className={styles.button} onClick={() => handleAppendCart()}>
 				<div className={styles.button_layer}></div>
-				<button>Add To Cart</button>
+				<button>{t('Add To Cart')}</button>
 			</div>
 		</div>
 	);

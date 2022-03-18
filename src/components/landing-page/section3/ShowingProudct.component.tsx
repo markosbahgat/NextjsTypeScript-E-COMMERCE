@@ -5,15 +5,17 @@ import styles from "./style.module.scss";
 import { useAppSelector } from 'store/hooks';
 import { essentialState } from 'slices/essential.slice';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 interface Props {}
 
 const ShowingProduct: React.FC<Props> = () => {
 	const state = useAppSelector(essentialState);
+	const { t } = useTranslation('common');
 	return (
 		<div className={styles.main_container} id={styles[`${state.darkMode && 'dark'}`]}>
 			<div className={styles.header_title_container}>
-				<h1>this is title forr showing product</h1>
+				<h1>{t('This Is Title Forr Showing Product')}</h1>
 			</div>
 			<div className={styles.middel_container}>
 				<div className={styles.img_container}>
@@ -38,7 +40,7 @@ const ShowingProduct: React.FC<Props> = () => {
 				<button>
 					<Link href="/products">
 						<a>
-							Shop Now <i className="fa-solid fa-arrow-right-long"></i>
+							{t('Shop Now')} <i className="fa-solid fa-arrow-right-long"></i>
 						</a>
 					</Link>
 				</button>
