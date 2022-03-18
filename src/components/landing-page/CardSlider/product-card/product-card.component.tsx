@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from "store/hooks";
 import { appendCart, increament } from "slices/cart.slice";
 import { cartState } from "slices/cart.slice";
 import { showModel } from "slices/essential.slice";
-import { useTranslation } from "next-i18next";
+import  useTranslation  from 'next-translate/useTranslation';
 
 interface Props extends HTMLProps<HTMLAllCollection> {
 	product: IProduct;

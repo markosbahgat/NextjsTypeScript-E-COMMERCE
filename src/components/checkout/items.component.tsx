@@ -4,7 +4,7 @@ import { IProWithAmount } from "../../models/interfaces/product.model";
 import styles from "./items.module.scss";
 import { useAppDispatch } from "../../store/hooks";
 import { showModel } from "slices/essential.slice";
-import { useTranslation } from 'next-i18next';
+import  useTranslation  from 'next-translate/useTranslation';
 
 interface ItemsProps {
 	product: IProWithAmount;

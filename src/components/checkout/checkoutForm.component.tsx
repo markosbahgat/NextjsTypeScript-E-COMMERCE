@@ -5,7 +5,7 @@ import { IContact, IShipping, IConfirm } from '../../models/interfaces/checkoutC
 import ContactInfo from "components/CheckoutContactInfoForm/ContactInfo.component";
 import ShippingInfo from "components/ShippingInfo/ShippingInfo.component";
 import ConfirmCheckout from "components/ConfirmCheckout/ConfirmCheckout.component";
-import { useTranslation } from "next-i18next";
+import  useTranslation  from 'next-translate/useTranslation';
 
 interface Props { }
 export interface FormValues extends IContact, IShipping, IConfirm {}

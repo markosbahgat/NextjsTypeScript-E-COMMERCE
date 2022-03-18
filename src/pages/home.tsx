@@ -5,18 +5,10 @@ import { HomeHOC } from "HOC";
 import storage from "store/storage";
 import { essentialState } from "slices/essential.slice";
 import { useAppSelector } from "store/hooks";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
-export async function getServerSideProps({ locale }: any) {
-	return {
-		props: {
-			...(await serverSideTranslations(locale, ['common', 'navbar']))
-		},
-	};
-}
 
-const Home: NextPage = (props) => {
+const Home: NextPage = () => {
 	const getauth = async () => {
 		await storage.setItem("test", "this is a simple test from markos bahgat");
 		const Test = await storage.getItem("persist:root");

@@ -5,7 +5,7 @@ import styles from "./style.module.scss";
 import { useAppSelector } from 'store/hooks';
 import { essentialState } from 'slices/essential.slice';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
+import  useTranslation  from 'next-translate/useTranslation';
 
 interface Props {}
 

@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "store/hooks";
 import { showModel, essentialState } from "slices/essential.slice";
 import { clearCart } from "slices/cart.slice";
 import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import useTranslation from 'next-translate/useTranslation';
 
 interface Props extends React.HTMLProps<HTMLAllCollection> {}
 

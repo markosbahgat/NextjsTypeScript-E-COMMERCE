@@ -5,7 +5,7 @@ import img2 from "assets/img2.jpg";
 import img3 from "assets/img3.jpg";
 import img4 from "assets/img4.jpg";
 import Image from "next/image";
-import { useTranslation } from 'next-i18next';
+import  useTranslation  from 'next-translate/useTranslation';
 
 interface Props{}
 
@@ -39,7 +39,7 @@ const ImageSlider: React.FC<Props> = () => {
 				<div className={styles.slideShow_content}>
 					<h1>{t('ONLINE STORE WEBSTIE')}</h1>
 					<span>
-						{t('Lorem, Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Consequuntur Ullam Illo. Aliquid, Nam Incidunt Saepe Iure Quo Ipsum..!!')}
+						{t('Lorem')}
 					</span>
 					<a onClick={handleScroll}>{t('Explore Latest Categories') }</a>
 				</div>

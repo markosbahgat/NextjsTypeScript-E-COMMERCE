@@ -7,8 +7,10 @@ import { showDarkMode, showModel } from "slices/essential.slice";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import MaterialUISwitch from "./Switcher";
 import { essentialState } from '../../slices/essential.slice';
-import { useTranslation } from "next-i18next";
+import  useTranslation  from 'next-translate/useTranslation';
 import { destroyCookie } from 'nookies';
+import Switcher from "components/langSwitcher/Switcher.component";
+import { useRouter } from "next/router";
 interface Props extends HTMLProps<HTMLAllCollection> {}
 
 
@@ -19,6 +21,7 @@ const TopNavbar: React.FC<Props> = () => {
 	const [showNav, setShowNav] = useState<boolean>(false);
 	const [showDropdown, setShowDropdown] = useState<boolean>(false);
 	const cookies = parseCookies();
+	const router = useRouter();
 	const handleDropdown = () => {
 		setShowDropdown((showDropdown) => !showDropdown);
 	};
@@ -32,7 +35,9 @@ const TopNavbar: React.FC<Props> = () => {
 		setShowNav((showNav) => !showNav);
 	};
 	const handleNavElement = () => setShowNav((showNav) => !showNav);
-	const label = t('Dark Mode');
+
+	const label = t(state.darkMode ?'Light Mode' : 'Dark Mode');
+
 	const handleLogOut = () => {
 		setShowDropdown((showDropdown) => !showDropdown);
 		setShowNav((showNav) => !showNav);
@@ -55,7 +60,7 @@ const TopNavbar: React.FC<Props> = () => {
 						<i className="fas fa-times fa-lg"></i>
 					</div>
 
-					<li onClick={handleNavElement}>
+					<li>
 					<FormControlLabel
 						control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
 							label={label}
@@ -66,33 +71,36 @@ const TopNavbar: React.FC<Props> = () => {
 
 					<li onClick={handleNavElement}>
 						<Link href="/home">
-							<a className={styles.active}>{t('Home')}</a>
+							<a className={styles[`${router.pathname === '/home' && "active"}`]}>{t('Home')}</a>
 						</Link>
 					</li>
 
 					{cookies.authUser ? (
 						<li onClick={handleNavElement}>
 							<Link href="/products">
-								<a>{t('Products')}</a>
+								<a className={styles[`${router.pathname === '/products' && "active"}`]}>{t('Products')}</a>
 							</Link>
 						</li>
 					) : (
 						<li onClick={handleNavElement}>
 							<Link href="/login">
-								<a>{t('sign in')}</a>
+								<a className={styles[`${router.pathname === '/login' && "active"}`]}>{t('sign in')}</a>
 							</Link>
 						</li>
 					)}
 
 					<li onClick={handleNavElement}>
 						<Link href="/about">
-							<a>{t('about')}</a>
+							<a className={styles[`${router.pathname === '/about' && "active"}`]}>{t('about')}</a>
 						</Link>
 					</li>
 					<li onClick={handleNavElement}>
 						<Link href="/contactus">
-							<a>{t('contactus')}</a>
+							<a className={styles[`${router.pathname === '/contactus' && "active"}`]}>{t('contactus')}</a>
 						</Link>
+					</li>
+					<li  id={styles.select}>
+						<Switcher />
 					</li>
 					<li style={{ position: "relative" }}>
 						<div id={styles.userIcon} onClick={handleDropdown}>

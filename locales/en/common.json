@@ -1,6 +1,6 @@
 {
     "ONLINE STORE WEBSTIE": "ONLINE STORE WEBSITE",
-    "Lorem, Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Consequuntur Ullam Illo. Aliquid, Nam Incidunt Saepe Iure Quo Ipsum..!!": "Lorem, Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Consequuntur Ullam Illo. Aliquid, Nam Incidunt Saepe Iure Quo Ipsum..!!" ,
+    "Lorem": "Lorem, Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Consequuntur Ullam Illo. Aliquid, Nam Incidunt Saepe Iure Quo Ipsum..!!" ,
     "Explore Latest Categories": "Explore Latest Categories",
     "This Is Title Forr Showing Product":"This Is Title Forr Showing Product", 
     "sample test phrase":"sample test phrase",
@@ -20,5 +20,7 @@
     "ITEMS":"ITEMS",
     "Edit":"Edit",
     "OverAll Price":"OverAll Price",
-    "No Products in the cart!":"No Products in the cart!"
+    "No Products in the cart!":"No Products in the cart!",
+    "Cart":"Cart",
+    "Checkout":"Checkout"
 }

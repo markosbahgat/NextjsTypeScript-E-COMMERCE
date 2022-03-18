@@ -4,7 +4,7 @@ import styles from "styles/HOC.module.scss";
 import ProductCart from "../components/cart-product/Product-Cart.component";
 import { useAppSelector } from "../store/hooks";
 import { cartState } from "../slices/cart.slice";
-import { useTranslation } from "next-i18next";
+import useTranslation from 'next-translate/useTranslation';
 
 interface Props extends HTMLProps<HTMLAllCollection> {}
 
