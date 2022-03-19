@@ -80,7 +80,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 			</div>
 			<div className={styles.button} onClick={() => handleAppendCart()}>
 				<div className={styles.button_layer}></div>
-				<button>{t('Add To Cart')}</button>
+				<button className="cart_btn">{t('Add To Cart')}</button>
 			</div>
 		</div>
 	);

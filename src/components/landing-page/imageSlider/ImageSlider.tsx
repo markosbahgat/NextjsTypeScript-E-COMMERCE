@@ -6,11 +6,14 @@ import img3 from "assets/img3.jpg";
 import img4 from "assets/img4.jpg";
 import Image from "next/image";
 import  useTranslation  from 'next-translate/useTranslation';
+import { useAppSelector } from '../../../store/hooks';
+import { essentialState } from '../../../slices/essential.slice';
 
 interface Props{}
 
 const ImageSlider: React.FC<Props> = () => {
 	const { t } = useTranslation('common');
+	const state = useAppSelector(essentialState);
 	let counter = 0;
 	const [i, setI] = useState<number>(0);
 	const images = [img1, img1, img2, img3, img4];
@@ -30,7 +33,7 @@ const ImageSlider: React.FC<Props> = () => {
 		window.scrollTo({top:1850, behavior:"smooth"})
 	}
 	return (
-		<div className={styles.banner}>
+		<div className={styles.banner} id={styles[`${state.darkMode && "dark"}`]}>
 			<div className={styles.slider}>
 				<Image src={images[i]} alt="backgroundImage" id={styles.slideImg} layout="fill" />
 			</div>

@@ -22,7 +22,7 @@ const ShowingProduct: React.FC<Props> = () => {
 					<Image src={img} alt="productImg" layout="fill" priority />
 				</div>
 				<div className={styles.data_container}>
-					<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+					<h3>{t('Lorem ipsum dolor sit amet consectetur adipisicing elit')}</h3>
 					<p>Lorem ipsum dolor sit </p>
 					<p>
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus soluta rerum odio veniam quis
