@@ -21,8 +21,9 @@ const Layout: React.FC<Props> = ({ children }) => {
 	}
 	return (
 		<>
-			<div style={{position:"fixed", zIndex:"10000000", left:"95%", top:"90vh", display:`${showBtn ? 'block': 'none'}`}}>
-				<button style={{cursor:"pointer",width:"40px", height:"40px", background:"aqua", border:"none", fontSize:"16px", borderRadius:"5px"}} onClick={handleGoUp}><i className="fa-solid fa-angles-up"></i></button>
+			
+			<div style={{display:`${showBtn ? 'block': 'none'}`}} className={styles.up_container}>
+				<button onClick={handleGoUp}><i className="fa-solid fa-angles-up"></i></button>
 			</div>
 			<div className={styles.layout_container}>
 				<div className={styles.header}>
