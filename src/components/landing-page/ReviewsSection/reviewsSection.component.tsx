@@ -9,7 +9,7 @@ const ReviewsSection: React.FC<Props> = () => {
 	const state = useAppSelector(essentialState);
 	return (
 		<div>
-			<div className={styles.main_container} id={styles[`${state.darkMode && 'dark'}`]}>
+			<div className={styles.main_container} id={styles[`${state.darkMode && "dark"}`]}>
 				<div className={styles.title_container}>What Our Customers Are Saying</div>
 				<div className={styles.middel_container}>
 					<div className={styles.post_container}>

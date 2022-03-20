@@ -5,7 +5,7 @@ import { useAppSelector } from "store/hooks";
 import { fetchState } from "slices/getProducts.slice";
 import styles from "styles/HOC.module.scss";
 import ProductCard from "components/product-card/product-card.component";
-import { essentialState } from 'slices/essential.slice';
+import { essentialState } from "slices/essential.slice";
 
 interface Props extends HTMLProps<HTMLAllCollection> {}
 
@@ -24,7 +24,7 @@ export const PRODUCTSHOC: React.FC<Props> = () => {
 	} else {
 		return (
 			<>
-				<div className={styles.products_container} id={styles[`${EssentialState.darkMode && 'dark'}`]}>
+				<div className={styles.products_container} id={styles[`${EssentialState.darkMode && "dark"}`]}>
 					{state.allProducts.map((product) => (
 						<ProductCard key={product.id} product={product} />
 					))}

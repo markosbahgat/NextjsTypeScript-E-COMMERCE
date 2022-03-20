@@ -1,4 +1,4 @@
-@import 'styles/_variables.scss';
+@import "styles/_variables.scss";
 
 .main_container {
 	height: 80vh;
@@ -74,11 +74,10 @@
 }
 .main_container#dark {
 	@include Dark_Mode;
-	margin-bottom:1px;
-
+	margin-bottom: 1px;
 }
-.main_container#dark .post_container{
-	h3{
+.main_container#dark .post_container {
+	h3 {
 		color: black;
 	}
 }

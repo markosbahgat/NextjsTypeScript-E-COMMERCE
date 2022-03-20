@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
-
 .title {
 	text-align: left;
 	font-size: 25px;
@@ -8,38 +7,35 @@
 	margin-bottom: 2em;
 }
 
- .field {
+.field {
 	width: 50%;
 	height: 45px;
 	display: flex;
 	position: relative;
 	align-items: center;
 	margin: 0px 0px;
-	
 }
- .fullWidth_field {
+.fullWidth_field {
 	width: 100%;
 	height: 45px;
 	margin: 45px 0px;
 	display: flex;
 	position: relative;
 	align-items: center;
-
 }
- .field .label {
-	position: absolute;
-	top: -30px;
-	font-weight: 500;
-	white-space: nowrap;
-
-}
- .fullWidth_field .label {
+.field .label {
 	position: absolute;
 	top: -30px;
 	font-weight: 500;
 	white-space: nowrap;
 }
- .field input {
+.fullWidth_field .label {
+	position: absolute;
+	top: -30px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+.field input {
 	height: 100%;
 	width: 100%;
 	border: 1px solid lightgrey;
@@ -47,7 +43,7 @@
 	padding-left: 15px;
 	font-size: 18px;
 }
- .fullWidth_field input {
+.fullWidth_field input {
 	height: 90%;
 	width: 95%;
 	border: 1px solid lightgrey;
@@ -55,13 +51,13 @@
 	padding-left: 15px;
 	font-size: 18px;
 }
- .field select {
+.field select {
 	width: 100%;
 	padding-left: 10px;
 	font-size: 17px;
 	font-weight: 500;
 }
- .field button {
+.field button {
 	width: 100%;
 	height: calc(100% + 5px);
 	border: none;
@@ -84,7 +80,7 @@
 	-ms-transition: 0.5s ease;
 	-o-transition: 0.5s ease;
 }
- .firstNext {
+.firstNext {
 	width: 95%;
 	height: calc(100% + 5px);
 	border: none;
@@ -98,42 +94,40 @@
 	text-transform: uppercase;
 	transition: 0.5s ease;
 }
- .field button:hover {
+.field button:hover {
 	background: #000;
-
 }
-.fullWidth_field button:disabled{
+.fullWidth_field button:disabled {
 	background-color: #888;
 	cursor: auto;
 }
- #btns button {
+#btns button {
 	margin-top: -20px !important;
 }
- #btns button#prev {
+#btns button#prev {
 	margin-right: 3px;
 	font-size: 17px;
 }
- #btns button#next {
+#btns button#next {
 	margin-left: 3px;
-
 }
 
-.names_container{
+.names_container {
 	display: flex;
 	flex-direction: row;
 	width: 95%;
 	justify-content: space-between;
-	div{
+	div {
 		display: inline-flex;
 		width: 45%;
 	}
 }
 
-@media screen and (max-width:1000px){
-	.names_container{
+@media screen and (max-width: 1000px) {
+	.names_container {
 		display: flex;
 		flex-direction: column;
-		.field{
+		.field {
 			display: inline-flex;
 			width: 100%;
 			margin-top: 3em;

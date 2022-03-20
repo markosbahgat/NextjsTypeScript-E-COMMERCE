@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./Style.module.scss";
-import { useAppSelector } from 'store/hooks';
-import { essentialState } from 'slices/essential.slice';
+import { useAppSelector } from "store/hooks";
+import { essentialState } from "slices/essential.slice";
 
 interface Props {}
 const FixedBottomFooter: React.FC<Props> = () => {
 	const state = useAppSelector(essentialState);
 	return (
-		<footer className={styles.footer} id={styles[`${state.darkMode && 'dark'}`]}>
+		<footer className={styles.footer} id={styles[`${state.darkMode && "dark"}`]}>
 			<div className={styles.content}>
 				<div className={styles.top}>
 					<div className={styles.logo_details}>

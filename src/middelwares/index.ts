@@ -1,2 +1,2 @@
-export { GetProducts } from './getProducts.middelware';
-export { PostNewUser } from './newUser.middelware';
+export { GetProducts } from "./getProducts.middelware";
+export { PostNewUser } from "./newUser.middelware";

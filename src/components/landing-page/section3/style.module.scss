@@ -1,4 +1,4 @@
-@import 'styles/_variables.scss';
+@import "styles/_variables.scss";
 
 .main_container {
 	width: 100%;
@@ -55,7 +55,7 @@
 			-moz-transition: all 0.3s ease-in-out;
 			-ms-transition: all 0.3s ease-in-out;
 			-o-transition: all 0.3s ease-in-out;
-			a{
+			a {
 				text-decoration: none;
 				color: black;
 			}
@@ -67,16 +67,15 @@
 			border: none;
 			a {
 				color: white;
-				
 			}
 		}
 	}
 }
 
 .main_container#dark {
-	@include Dark_Mode
+	@include Dark_Mode;
 }
-.main_container#dark .buttons_container button{
+.main_container#dark .buttons_container button {
 	border: 1px solid white;
 	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -85,10 +84,9 @@
 	-o-transition: all 0.3s ease-in-out;
 	a {
 		color: white;
-
 	}
 }
-.main_container#dark .buttons_container button:hover{
+.main_container#dark .buttons_container button:hover {
 	color: white;
 	border: none;
 }

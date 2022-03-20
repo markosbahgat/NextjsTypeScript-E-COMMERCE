@@ -9,21 +9,17 @@ import Layout from "../components/layout/layout.component";
 import nookies, { parseCookies } from "nookies";
 import { PersistGate } from "redux-persist/integration/react";
 import { useRouter } from "next/router";
+
 function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter();
 	const cookies = parseCookies();
 	React.useEffect(() => {
-		if (router.pathname === "/products" && !cookies.authUser) {
-			router.push("/login");
-		}else if (router.pathname === '/checkout' && !cookies.authUser) {
-			router.push("/login");
-			
-		}else if (router.pathname === "/login" && cookies.authUser) {
-			router.push("/home");
-		} else if (router.pathname === "/") {
-			router.push("/home");
-		}
+		if (router.pathname === "/products" && !cookies.authUser) router.push("/login");
+		else if (router.pathname === "/checkout" && !cookies.authUser) router.push("/login");
+		else if (router.pathname === "/login" && cookies.authUser) router.push("/home");
+		else if (router.pathname === "/") router.push("/home");
 	}, [router, cookies.authUser]);
+
 	return (
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
@@ -34,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 		</Provider>
 	);
 }
+
 MyApp.getInitialProps = async (context: AppContext) => {
 	const { ctx } = context;
 	const cookies = nookies.get(ctx);
@@ -52,4 +49,5 @@ MyApp.getInitialProps = async (context: AppContext) => {
 	}
 	return await App.getInitialProps(context);
 };
+
 export default MyApp;

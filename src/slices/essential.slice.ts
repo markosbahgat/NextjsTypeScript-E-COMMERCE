@@ -21,7 +21,7 @@ const essentialSlice = createSlice({
 		},
 		showDarkMode: (state, action) => {
 			state.darkMode = action.payload;
-		}
+		},
 	},
 });
 export const { showModel, showDarkMode } = essentialSlice.actions;

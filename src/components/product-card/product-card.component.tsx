@@ -7,8 +7,8 @@ import { useAppDispatch, useAppSelector } from "store/hooks";
 import { appendCart, increament } from "slices/cart.slice";
 import { cartState } from "slices/cart.slice";
 import { showModel } from "slices/essential.slice";
-import { essentialState } from '../../slices/essential.slice';
-import useTranslation  from 'next-translate/useTranslation';
+import { essentialState } from "../../slices/essential.slice";
+import useTranslation from "next-translate/useTranslation";
 
 interface Props extends HTMLProps<HTMLAllCollection> {
 	product: IProduct;
@@ -26,7 +26,7 @@ const handleSlidePage = (e: any) => {
 	}
 };
 const ProductCard: React.FC<Props> = ({ product }) => {
-	const { t } = useTranslation('common');
+	const { t } = useTranslation("common");
 	const dispatch = useAppDispatch();
 	const state = useAppSelector(cartState);
 	const EssentialState = useAppSelector(essentialState);
@@ -40,7 +40,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 		}
 	};
 	return (
-		<div className={styles.product_card} id={styles[`${EssentialState.darkMode && 'dark'}`]}>
+		<div className={styles.product_card} id={styles[`${EssentialState.darkMode && "dark"}`]}>
 			<div className={styles.logo_cart}>
 				<div className={styles.cart_img_container}>
 					<Image src={logo} alt="logo" className={styles.cart_img} />
@@ -80,7 +80,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 			</div>
 			<div className={styles.button} onClick={() => handleAppendCart()}>
 				<div className={styles.button_layer}></div>
-				<button className="cart_btn">{t('Add To Cart')}</button>
+				<button className="cart_btn">{t("Add To Cart")}</button>
 			</div>
 		</div>
 	);

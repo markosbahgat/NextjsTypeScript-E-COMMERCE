@@ -6,8 +6,6 @@ import storage from "store/storage";
 import { essentialState } from "slices/essential.slice";
 import { useAppSelector } from "store/hooks";
 
-
-
 const Home: NextPage = () => {
 	const getauth = async () => {
 		await storage.setItem("test", "this is a simple test from markos bahgat");
@@ -18,11 +16,10 @@ const Home: NextPage = () => {
 	console.log(getauth());
 	const state = useAppSelector(essentialState);
 	return (
-		<div className={styles.main_home_container} id={styles[`${state.darkMode && 'dark'}`]}>
+		<div className={styles.main_home_container} id={styles[`${state.darkMode && "dark"}`]}>
 			<HomeHOC />
 		</div>
 	);
 };
-
 
 export default Home;

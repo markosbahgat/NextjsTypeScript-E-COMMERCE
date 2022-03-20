@@ -46,7 +46,6 @@ const SignUpForm: React.FC<Props> = ({ onSubmit }) => {
 							pattern:
 								/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i,
 						})}
-						
 					/>
 					<i className="fas fa-envelope fa-lg"></i>
 					{errors.email?.type === "required" && <span color="red">Please Confirm Email</span>}

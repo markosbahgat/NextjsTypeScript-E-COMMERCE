@@ -11,7 +11,7 @@ interface Props extends HTMLProps<HTMLAllCollection> {}
 
 export const HomeHOC = (props: Props) => {
 	const state = useAppSelector(fetchState);
-	
+
 	return (
 		<>
 			<ImageSlider />
@@ -19,7 +19,6 @@ export const HomeHOC = (props: Props) => {
 			<ShowingProduct />
 			<Counter />
 			<ReviewsSection />
-			
 		</>
 	);
 };

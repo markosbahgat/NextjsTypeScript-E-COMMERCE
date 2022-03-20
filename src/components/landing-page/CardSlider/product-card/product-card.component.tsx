@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from "store/hooks";
 import { appendCart, increament } from "slices/cart.slice";
 import { cartState } from "slices/cart.slice";
 import { showModel } from "slices/essential.slice";
-import  useTranslation  from 'next-translate/useTranslation';
+import useTranslation from "next-translate/useTranslation";
 
 interface Props extends HTMLProps<HTMLAllCollection> {
 	product: IProduct;
@@ -26,7 +26,7 @@ const handleSlidePage = (e: any) => {
 	}
 };
 const ProductCard: React.FC<Props> = ({ product }) => {
-	const { t } = useTranslation('common');
+	const { t } = useTranslation("common");
 	const dispatch = useAppDispatch();
 	const state = useAppSelector(cartState);
 	const handleAppendCart = () => {
@@ -66,12 +66,12 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 				<div className={styles.button} onClick={() => dispatch(showModel(true))}>
 					<div className={styles.button_layer}></div>
 					<button>
-						<i className="fa-solid fa-cart-shopping"></i> {t('Cart')} 
+						<i className="fa-solid fa-cart-shopping"></i> {t("Cart")}
 					</button>
 				</div>
 				<div className={styles.button} onClick={() => handleAppendCart()}>
 					<div className={styles.button_layer}></div>
-					<button>{t('Add To Cart')}</button>
+					<button>{t("Add To Cart")}</button>
 				</div>
 			</div>
 		</div>

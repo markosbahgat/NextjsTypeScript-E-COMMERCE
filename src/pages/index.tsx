@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/index.module.scss";
-import useTranslation  from 'next-translate/useTranslation';
+import useTranslation from "next-translate/useTranslation";
 
 const Home: NextPage = () => {
-	const { t } = useTranslation('common');
+	const { t } = useTranslation("common");
 	return (
 		<div className={styles.container}>
 			<Head>

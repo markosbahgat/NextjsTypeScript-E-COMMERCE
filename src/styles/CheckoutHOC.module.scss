@@ -1,17 +1,17 @@
-.checkout_container{
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin: auto;
-    min-height: 100vh;
+.checkout_container {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+	margin: auto;
+	min-height: 100vh;
 }
 
-@media screen and (max-width:1000px){
-    .checkout_container{
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-    }
+@media screen and (max-width: 1000px) {
+	.checkout_container {
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: center;
+	}
 }

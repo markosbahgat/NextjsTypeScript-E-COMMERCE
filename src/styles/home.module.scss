@@ -1,5 +1,5 @@
-@import 'styles/_variables.scss';
+@import "styles/_variables.scss";
 
 .main_home_container#dark {
-    @include Dark_Mode
+	@include Dark_Mode;
 }

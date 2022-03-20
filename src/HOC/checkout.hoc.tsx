@@ -4,9 +4,9 @@ import { cartState } from "slices/cart.slice";
 import ItemsContianer from "components/checkout/items.component";
 import Link from "next/link";
 import CheckoutForm from "components/checkout/checkoutForm.component";
-import styles from 'styles/CheckoutHOC.module.scss';
+import styles from "styles/CheckoutHOC.module.scss";
 
-interface Props extends HTMLProps<HTMLAllCollection> { }
+interface Props extends HTMLProps<HTMLAllCollection> {}
 
 export const CHECKOUTHOC = (props: Props) => {
 	const state = useAppSelector(cartState);
