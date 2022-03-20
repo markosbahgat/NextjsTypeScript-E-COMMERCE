@@ -13,14 +13,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter();
 	const cookies = parseCookies();
 	React.useEffect(() => {
-		if (router.pathname === "/products" && !cookies.authUser) {
+		if (router.pathname === "/products" || router.pathname === '/checkout' && !cookies.authUser) {
 			router.push("/login");
 		} else if (router.pathname === "/login" && cookies.authUser) {
 			router.push("/home");
 		} else if (router.pathname === "/") {
 			router.push("/home");
 		}
-	}, [router]);
+	}, [router, cookies.authUser]);
 	return (
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
