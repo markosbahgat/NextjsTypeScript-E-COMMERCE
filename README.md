@@ -1,8 +1,8 @@
 # Nextjs TypeScript E-COMMERCE
 
-[![MarkosBahgata|](https://static.agilitycms.com/logos/full-logo-black-on-white-vercel_20200827182255_0.png)](https://nextjs-e-commerce-inky.vercel.app/home)
+[![MarkosBahgata|](https://static.agilitycms.com/logos/full-logo-black-on-white-vercel_20200827182255_0.png)](https://nextjs-e-commerce-three.vercel.app)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://nextjs-e-commerce-inky.vercel.app/home)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://nextjs-e-commerce-three.vercel.app)
 
 This App is an advanced E-commerce online store that have some,
 
