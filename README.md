@@ -8,9 +8,9 @@ This App is an advanced E-commerce online store that have some,
 
 
 ## Preview
-https://youtu.be/VTSThWfD9v0
 
 
+[![Watch the video](https://i9.ytimg.com/vi/VTSThWfD9v0/mqdefault.jpg?v=62377a90&sqp=COD83ZEG&rs=AOn4CLCXYjC36IyHTt31EaCDoE1cUtZH7g)](https://youtu.be/VTSThWfD9v0)
 
 ## Features
 
