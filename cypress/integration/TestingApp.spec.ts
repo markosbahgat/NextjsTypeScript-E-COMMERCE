@@ -1,10 +1,16 @@
+import { TestingCart } from './TestingCart.spec';
+import { TestingArabicLang } from './TestingArabicLang.spec';
+
+Cypress.config("viewportHeight", 700)
+Cypress.config("viewportWidth", 1600)
 
 
-describe("Testing Application", () =>
-{
+
+describe("Testing Application", () => {
     it('Visit the Website', () =>
     {
-        cy.viewport(1600, 700)
+        cy.clearCookies()
+        cy.clearLocalStorage()
         cy.visit('localhost:3003/home')
         cy.url().should('include', '/login')
     })
@@ -18,11 +24,18 @@ describe("Testing Application", () =>
     })
     it('Adding Proudcts To Cart', () =>
     {
-        cy.viewport(1600, 700)
         cy.url().should('include', '/home')
         cy.get('.style_main_container__XdBS6').scrollIntoView()
+        // cy.get('.fa-bars').click() // if you testing with mobile view
         cy.contains('Products').click()
         cy.url().should('include', '/products')
         cy.get('.cart_btn').click({multiple: true})
+        
+    })
+    context("CART", () => {
+        TestingCart();
+    })
+    context("ARABICLANG", () => {
+        TestingArabicLang();
     })
 })

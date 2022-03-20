@@ -83,7 +83,7 @@
 	top: 30px;
 }
 .dropdown_container {
-	display: none;
+	display: block;
 	position: absolute;
 	transform: translateX(-50%);
 	left: 50%;
@@ -120,9 +120,7 @@
 		}
 	}
 }
-.dropdown_container#showDropdown {
-	display: block;
-}
+
 .menu_list li:hover #userIcon {
 	color: cyan;
 }

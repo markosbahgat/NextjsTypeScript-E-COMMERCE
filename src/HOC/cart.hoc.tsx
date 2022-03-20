@@ -30,12 +30,13 @@ export const CARTHOC = (props: Props) => {
 						<hr style={{ height: "3px", backgroundColor: "black" }} />
 						<div className={styles.price_container}>
 							<h1>{t('OverAll Price') }:</h1>
-							<span>${Math.round(state.overAllPrice)}</span>
+							<span data-testing="Price_Span">${Math.round(state.overAllPrice)}</span>
 						</div>
 					</div>
 				</div>
 			) : (
 				<h1
+					data-testing="No_Products"
 					style={{
 						display: "flex",
 						flexDirection: "column",

@@ -23,6 +23,7 @@ const TopNavbar: React.FC<Props> = () => {
 	const cookies = parseCookies();
 	const router = useRouter();
 	const handleDropdown = () => {
+		
 		setShowDropdown((showDropdown) => !showDropdown);
 	};
 	const handleShowNav = () => {
@@ -49,7 +50,7 @@ const TopNavbar: React.FC<Props> = () => {
 			<div className={styles.content}>
 				<div className={styles.logo}>
 					<Link href="/home">
-						<a>{t('online store')}</a>
+						<a data-testing="Logo">{t('online store')}</a>
 					</Link>
 				</div>
 				<ul className={styles.menu_list} id={styles[`${showNav && "active"}`]}>
@@ -103,44 +104,46 @@ const TopNavbar: React.FC<Props> = () => {
 						<Switcher />
 					</li>
 					<li style={{ position: "relative" }}>
-						<div id={styles.userIcon} onClick={handleDropdown}>
+						<div id={styles.userIcon} onClick={handleDropdown}  data-testing="dropDown_button">
 							<i className="fas fa-user fa-lg"></i>
 						</div>
-						<div className={styles.dropdown_container} id={styles[`${showDropdown && "showDropdown"}`]}>
-							<ul>
-								<li onClick={handleShowNav}>
-									<Link href="/profile">
+						{showDropdown && (
+							<div className={styles.dropdown_container}>
+								<ul>
+									<li onClick={handleShowNav}>
+										<Link href="/profile">
+											<a>
+												<i className="fa-solid fa-user"></i> {t('Profile')}
+											</a>
+										</Link>
+									</li>
+									<li onClick={handleShowNav}>
+										<Link href="/profile">
+											<a>
+												<i className="fa-solid fa-screwdriver-wrench"></i>  {t('Settings')}
+											</a>
+										</Link>
+									</li>
+									<li onClick={handleShowNav}>
+										<Link href="/checkout">
+											<a>
+												<i className="fa-solid fa-credit-card"></i> {t('Checkout')}
+											</a>
+										</Link>
+									</li>
+									<li onClick={handleCartClick} data-testing="cart_button">
 										<a>
-											<i className="fa-solid fa-user"></i> {t('Profile')} 
+											<i className="fa-solid fa-cart-shopping"></i> {t('Cart')}
 										</a>
-									</Link>
-								</li>
-								<li onClick={handleShowNav}>
-									<Link href="/profile">
+									</li>
+									<li onClick={handleLogOut} data-testing="logOut">
 										<a>
-											<i className="fa-solid fa-screwdriver-wrench"></i>  {t('Settings')}
+											<i className="fa-solid fa-right-from-bracket"></i> {t('Logout')}
 										</a>
-									</Link>
-								</li>
-								<li onClick={handleShowNav}>
-									<Link href="/checkout">
-										<a>
-											<i className="fa-solid fa-credit-card"></i> {t('Checkout')}
-										</a>
-									</Link>
-								</li>
-								<li onClick={handleCartClick}>
-									<a>
-										<i className="fa-solid fa-cart-shopping"></i> {t('Cart')}
-									</a>
-								</li>
-								<li onClick={handleLogOut}>
-									<a>
-										<i className="fa-solid fa-right-from-bracket"></i> {t('Logout')}
-									</a>
-								</li>
-							</ul>
-						</div>
+									</li>
+								</ul>
+							</div>
+						)}
 					</li>
 				</ul>
 				<div

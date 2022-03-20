@@ -32,6 +32,7 @@ export const CHECKOUTHOC = (props: Props) => {
 				<p style={{ fontSize: "30px" }}>Go Shopping and Get Some Products in the Cart, Man!</p>
 				<Link href="/products">
 					<a
+						data-testing="link_to_products"
 						style={{
 							color: "black",
 							textDecoration: "none",
