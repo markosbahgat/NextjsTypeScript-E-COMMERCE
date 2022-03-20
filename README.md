@@ -8,7 +8,7 @@ This App is an advanced E-commerce online store that have some,
 
 
 ## Preview
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/VTSThWfD9v0)
+https://youtu.be/VTSThWfD9v0
 
 
 
